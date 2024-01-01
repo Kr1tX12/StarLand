@@ -1,0 +1,334 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,300;0,400;0,500;0,700;0,900;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+/*Create variables*/
+:root {
+  --bcg-night-color:#232323;
+  --bcg-night2-color:#262626;
+  --bcg-night3-color:#303030;
+}
+body {
+  background-color:var(--bcg-night-color);
+  margin:0;
+  font-family:'Montserrat' sans-serif;
+  margin-bottom:100px;
+}
+
+canvas {
+  
+}
+
+/*navbar*/
+.navbar {
+  transition:all 0.5s;
+  z-index:100;
+  position:fixed;
+  left:0;
+  right:0;
+  top:0;
+  backdrop-filter:blur(10px);
+  background:linear-gradient(to top, var(--bcg-night-color), transparent);
+}
+.navbar-grid {
+  padding:15px;
+  display:grid;
+  grid-template-columns:30px 1fr;
+  align-items:center;
+  
+}
+
+/*hamburger icon*/
+.left-navbar-ham-icon-div {
+  height:30px;
+}
+.left-navbar-ham-icon-img {
+  height:30px;
+}
+
+/*starland title navbar*/
+.center-navbar-sl-logo-div {
+  height:4vh;
+  margin-left:calc(50vw - 75px);
+}
+.center-navbar-sl-logo-img {
+  /*height:30px;*/
+  height:4vh;
+  vertical-align:-3px;
+  transition:all 0.3s;
+}
+.navbar-logo-button {
+  background:none;
+  border:none;
+}
+.center-navbar-sl-logo-img:active {
+  filter:saturate(3);
+  height:3.8vh;
+  margin-top:calc(4vh - 3.8vh);
+  margin-left:calc(4vh - 3.8vh);
+}
+
+.left-navbar-ham-button {
+  background: none;
+  border:none;
+}
+.wiki-rules-buttons-div {
+  display:grid;
+  grid-template-columns: 150px 150px;
+  margin:0 30px;
+  margin-top: 10px;
+  margin-left: calc(50vw - 150px)
+}
+
+
+/********************/
+/**Top part of site**/
+/********************/
+.top-part {
+  position:relative;
+}
+.top-part-inside {
+  position:absolute;
+  top:110px;
+  left:0;
+  right:0;
+}
+
+@keyframes text-show {
+  0% {
+    opacity:0;
+    margin-top:-50px;
+  }
+  100% {
+    opacity:1;
+    margin-top:0;
+  }
+}
+.starland-title {
+  font-family:'Montserrat';
+  font-weight:700;
+  font-size:15vw;
+  color:white;
+  text-align: center;
+  
+  animation: 0.7s ease-out 0s 1 alternate text-show;
+  
+  background: -webkit-linear-gradient(#FFFFFF, #A2AAFF);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.server-description {
+  font-family:'Montserrat';
+  font-size:4vw;
+  color:white;
+  margin-top: 20px;
+  width:400px;
+  margin-left: calc(50vw - 200px);
+  text-align:center;
+
+  
+  background: -webkit-linear-gradient(#FFFFFF, #F6F6F6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.free-and-private-text {
+  background: -webkit-linear-gradient(#FFFFFF, #9BFF5A);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.discord-logo {
+  margin-right: 5px;
+  height:23px;
+  vertical-align: middle;
+  filter:brightness(500%);
+}
+.discord-button {
+  background-color:#5865f2;
+  padding:10px 30px;
+  width:300px;
+  text-align:center;
+  font-family: 'Montserrat';
+  border-radius: 30px;
+  border:1px solid #505ff4;
+  font-size:17px;
+  font-weight:600;
+  color:white;
+  margin-left:calc(50vw - 150px);
+  margin-top:250px;
+}
+.discord-button:hover {
+  background-color:#505ff4;
+}
+.wiki-button {
+  width:100%;
+  height:50px;
+  border:1px solid black;
+  border-right:none;
+  border-top-left-radius: 30px;
+  border-bottom-left-radius: 30px;
+  
+  background-color:#9FFF82;
+  font-weight: 600;
+  font-family: 'Montserrat';
+}
+.rules-button {
+  width:100%;
+  height:50px;
+  border:1px solid black;
+  border-left:none;
+  border-top-right-radius: 30px;
+  border-bottom-right-radius: 30px;
+  
+  background-color:#F2F2F2;
+  font-weight: 600;
+  font-family: 'Montserrat';
+}
+
+/****************/
+/*Statistic part*/
+/****************/
+
+.stat-img {
+  width:30vw;
+  margin-left:calc(50vw - 15vw - 25px);
+}
+.stat-num {
+  color:white;
+  text-align:center;
+  font-size:10vw;
+  font-family: 'Montserrat';
+  font-weight:700;
+  
+  background: -webkit-linear-gradient(#FFFFFF, #5865f2);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.stat-description {
+  color:white;
+  text-align:center;
+  font-family: 'Montserrat';
+  
+}
+
+.server-stat-part {
+  margin:70px 25px;
+  padding:100px 0;
+  background-color: var(--bcg-night2-color);
+  border-radius:20px;
+}
+.stat-part {
+  margin-bottom:50px;
+}
+.cyan-gradient {
+  background: -webkit-linear-gradient(#FFFFFF, #4AC0FF);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.yellow-gradient {
+  background: -webkit-linear-gradient(#FFFFFF, #FFF13F);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.stat-part {
+  margin-left: -100px;
+  opacity:0;
+  transition:all 1s;
+}
+
+
+/**************/
+/*Other button*/
+/**************/
+
+.other-window {
+  z-index:200;
+  border-radius:20px;
+  background-color:var(--bcg-night2-color);
+  position:fixed;
+  left:calc(50vw - 150px);
+  top:calc(50vh - 250px);
+  height:500px;
+  width:300px;
+  display:none;
+  transition: all 0.5s;
+  
+  border:1px solid #353535;
+}
+.window-gray {
+  z-index:150;
+  position:fixed;
+  top:0;
+  bottom:0;
+  right:0;
+  left:0;
+  background-color: rgba(0,0,0,0.3);
+  transition: all 0.5s;
+  display:none;
+}
+@keyframes window-anim {
+  0% {
+    height:50px;
+    opacity:0;
+  }
+  100% {
+    opacity:1;
+    height:500px;
+  }
+}
+@keyframes opacity-anim {
+  0% {
+    opacity:0;
+  }
+  100% {
+    opacity:1;
+  }
+}
+.other-text-div {
+  display:grid;
+  grid-template-columns:1fr 50px;
+  height:50px;
+  align-items: center;
+}
+.other-text {
+  color:white;
+  font-family:'Montserrat';
+  font-size:20px;
+  font-weight: 600;
+  margin-left:20px;
+}
+.other-close-button {
+  width:100%;
+  height:100%;
+  background:none;
+  border:none;
+}
+
+.other-close-icon {
+  height:30px;
+  filter:brightness(1000%);
+}
+
+.other-page-img {
+  height:25px;
+}
+.other-buttons {
+  display:grid;
+  grid-template-columns: 1fr;
+  margin:10px;
+  margin-left:15px;
+}
+.other-button-part {
+  display:grid;
+  grid-template-columns: 40px 1fr;
+  align-items:center;
+  padding:10px;
+  transition: all 0.2s;
+}
+.other-button-part:hover {
+  background-color:#303030;
+  border-radius:10px;
+}
+.other-button-name {
+  color:white;
+  font-family: 'Montserrat';
+  font-weight: 500;
+  margin-left:0;
+}

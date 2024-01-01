@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="style/index.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1 user-scalable=no">
+    <title>StarLand</title>
+  </head>
+  <body>
+     <div class="window-gray" onclick="
+       otherWindowClose();
+     ">
+       
+     </div>
+    <div class="other-window">
+      <div class="other-text-div">
+        <div class="other-text">
+          Страницы
+        </div>
+        <div class="other-close-button-div">
+          <button class="other-close-button"onclick="
+            otherWindowClose();
+          ">
+            <img src="images/close-icon.png" class="other-close-icon">
+          </button>
+        </div>
+      </div>
+      <div class="other-buttons">
+        <div class="other-main-page other-button-part" onclick="
+          toHome();
+        ">
+          <div>
+            <img src="images/home-icon.png" class="other-page-img">
+          </div>
+          <div class="other-button-name" style="color:lightgreen">
+            Домашняя страница
+          </div>
+        </div>
+        <div class="other-wiki-page other-button-part" onclick="
+          toWiki();
+        ">
+          <div>
+            <img src="images/wiki-icon.png" style="filter:invert()" class="other-page-img">
+          </div>
+          <div class="other-button-name">
+            Википедия сервера
+          </div>
+        </div>
+        <div class="other-rules-page other-button-part" onclick="
+          toRules();
+        ">
+          <div>
+            <img src="images/rules-icon.png" style="filter:invert()" class="other-page-img">
+          </div>
+          <div class="other-button-name">
+            Правила
+          </div>
+        </div>
+        <div class="other-applications-page other-button-part" onclick="
+          toApplications();
+        ">
+          <div>
+            <img src="images/applications-icon.png" style="filter:invert()" class="other-page-img">
+          </div>
+          <div class="other-button-name">
+            Заявка на сервер
+          </div>
+        </div>
+        
+      </div>
+    </div>
+    <!--Navbar-->
+    <div class="navbar">
+      <div class="navbar-grid">
+        <div class="left-navbar-ham-icon-div">
+          <button class="left-navbar-ham-button" onclick="
+            otherWindowOpen();
+          ">
+            <img class="left-navbar-ham-icon-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/Hamburger_icon_white.svg/1200px-Hamburger_icon_white.svg.png">
+          </button>
+        </div>
+        <div class="center-navbar-sl-logo-div">
+          <button class="navbar-logo-button" onclick="
+            toTop();
+          ">
+            <img class="center-navbar-sl-logo-img" src="images/sl-title.png">
+          </button>
+          
+        </div>
+          
+        </div>
+      </div>
+    </div>
+    
+    <!--Top part of site-->
+    <div class="top-part">
+      <canvas> </canvas>
+      <div class="top-part-inside">
+        <div class="starland-title">
+           StarLand
+        </div>
+        <div class="server-description">
+          <span class="free-and-private-text">Бесплатный приватный</span> сервер для ванильного выживания
+        </div>
+        
+        <div>
+          <button class="discord-button" onclick="
+            window.open('https://discord.com/invite/bc4NDs7CVg')
+          ">
+            <img class="discord-logo" src="https://assets-global.website-files.com/6257adef93867e50d84d30e2/636e0a6a49cf127bf92de1e2_icon_clyde_blurple_RGB.png"> Наш Дискорд
+          </button>
+          
+          <div class="wiki-rules-buttons-div">
+            <form action="wiki.html" target="_self">
+               <button class="wiki-button">
+                 <img class="discord-logo"src="images/wiki-icon.png">Вики
+               </button>
+            </form>
+            <form action="rules.html" target="_self">
+              <button class="rules-button">
+               <img class="discord-logo"src="images/rules-icon.png">Правила
+              </button>
+            </form> 
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="server-stat-part">
+      <div class="stat-total-ds-members stat-part">
+        <img class="stat-img" src="https://assets-global.website-files.com/6257adef93867e50d84d30e2/636e0a6a49cf127bf92de1e2_icon_clyde_blurple_RGB.png">
+        <div class="stat-num">
+          3000
+        </div>
+        <div class="stat-description">
+          Участников в Дискорде
+        </div>
+      </div>
+      
+      <div class="servers-stat-part stat-part">
+        <img class="stat-img" src="images/server-icon.png">
+        <div class="stat-num cyan-gradient">
+          2 Сервера
+        </div>
+        <div class="stat-description">
+          Академия и Основа
+        </div>
+      </div>
+      
+      <div class="server-tps-part stat-part">
+        <img class="stat-img" src="images/electricity-icon.png">
+        <div class="stat-num cyan-gradient yellow-gradient">
+          Стабильный TPS
+        </div>
+        <div class="stat-description">
+          Много возможностей с ядром Purpur
+        </div>
+      </div>
+    </div>
+    <script src="script/starland.js"></script>
+    
+    <script src="script/canvas.js"></script>
+    <script src="script/events.js"></script>
+  </body>
+</html>

@@ -1,0 +1,115 @@
+body {
+  margin-top:90px;
+  overflow: auto";
+}
+.rules-content {
+  margin-left:20px;
+  margin-right:20px;
+  padding:30px 10px;
+  border-radius:10px;
+  background-color: var(--bcg-night2-color);
+}
+.rules-content-part {
+  background: linear-gradient(#FFFFFF, #7FFF8F);
+  margin:10px;
+  padding:15px 10px;
+  border-radius: 15px;
+}
+.rules-content-subpart {
+  background:var(--bcg-night3-color);
+  margin-left:30px;
+  border:1px solid lightgray;
+}
+.rules-content-part-link {
+  font-weight: 700;
+  font-family: 'Montserrat';
+  
+}
+.rules-content-part-sublink {
+  font-weight: 500;
+  color:white;
+}
+.rules-logo {
+  display:grid;
+  grid-template-columns: 40px 1fr;
+  align-items: center;
+  margin:10px 20px;
+  
+  background: -webkit-linear-gradient(#FFFFFF, #7FFF8F);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  
+  animation: 0.5s ease-out 0s 1 alternate text-show;
+}
+.rules-back-icon {
+  height:40px;
+  filter:invert();
+}
+.rules-text {
+  color:white;
+  margin-left:15px;
+  font-family:'Montserrat';
+  font-size:22px;
+  font-weight: 600;
+}
+@keyframes text-left-show {
+  0% {
+    opacity:0;
+    margin-left:-100px;
+  }
+  100% {
+    opacity:1;
+    margin-left:15px;
+  }
+}
+
+
+.rule {
+  margin:40px 20px;
+  
+}
+.rule-name {
+  color:white;
+  font-family: 'Montserrat';
+  font-weight: 600;
+  font-size: 25px;
+}
+.rule-description {
+  color:white;
+  font-family: 'Montserrat';
+  font-size:15px;
+  margin-top:13px;
+}
+.rule-num {
+  color:#FFE151;
+}
+.rule-warning {
+  background-color: #2E2E2E;
+  border:1px solid #434343;
+  padding:14px 20px;
+  border-radius: 15px;
+  margin-top: 10px;
+  color:white;
+  font-family: 'Montserrat';
+  font-size: 16px;
+}
+.rule-name-main {
+  text-align: center;
+  background-color: #2D2D2D;
+  border:1px solid #434343;
+  border-radius:10px;
+  padding:10px;
+}
+
+.yellow-num {
+  color: #FFDF41;
+}
+.blue-num {
+  color: #415CFF;
+}
+.purple-num {
+  color:#9A41FF;
+}
+.green-num {
+  color:yellowgreen;
+}
