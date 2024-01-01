@@ -1,0 +1,170 @@
+.wiki-logo2 {
+  display:grid;
+  grid-template-columns: 40px 1fr;
+  align-items: center;
+  margin:10px 20px;
+  
+  background: -webkit-linear-gradient(#FFFFFF, #4353FF);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  
+  animation: 0.5s ease-out 0s 1 alternate text-show;
+}
+.wiki-back-icon {
+  height:40px;
+  filter:invert();
+}
+.wiki-text {
+  color:white;
+  margin-left:15px;
+  font-family:'Montserrat';
+  font-size:22px;
+  font-weight: 600;
+}
+.wiki-content {
+  margin-left:20px;
+  margin-right:20px;
+  padding:30px 10px;
+  border-radius:10px;
+  background-color: var(--bcg-night2-color);
+}
+
+@keyframes text-left-show {
+  0% {
+    opacity:0;
+    margin-left:-100px;
+  }
+  100% {
+    opacity:1;
+    margin-left:15px;
+  }
+}
+
+.wiki-top-part {
+  margin-top:90px;
+}
+
+.wiki-content-part {
+  background: linear-gradient(#FFFFFF, #EEFF43);
+  margin:10px;
+  padding:15px 10px;
+  border-radius: 15px;
+}
+.wiki-content-subpart {
+  background:var(--bcg-night3-color);
+  margin-left:30px;
+  border:1px solid lightgray;
+  transition: all 0.2s;
+}
+.wiki-content-subpart:hover {
+  background:#464646;
+}
+.wiki-content-part-link {
+  font-weight: 700;
+  font-family: 'Montserrat';
+}
+.wiki-content-part-sublink {
+  font-weight: 600;
+  color:white;
+}
+
+
+
+.wiki {
+  margin:40px 20px;
+  
+}
+.wiki-name {
+  color:white;
+  font-family: 'Montserrat';
+  font-weight: 600;
+  font-size: 25px;
+}
+.wiki-description {
+  color:white;
+  font-family: 'Montserrat';
+  font-size:15px;
+  margin-top:13px;
+}
+.wiki-num {
+  color:#FFE151;
+}
+.wiki-warning {
+  background-color: #2E2E2E;
+  border:1px solid #434343;
+  padding:14px 20px;
+  border-radius: 15px;
+  margin-top: 10px;
+  color:white;
+  font-family: 'Montserrat';
+  font-size: 16px;
+}
+.wiki-name-main {
+  text-align: center;
+  background-color: #2D2D2D;
+  border:1px solid #434343;
+  border-radius:10px;
+  padding:10px;
+}
+
+.discord-logo,
+.voice-logo,
+.dynmap-logo {
+  margin-right: 5px;
+  height:23px;
+  vertical-align: middle;
+  filter:brightness(500%);
+}
+.voice-logo {
+  filter:none;
+  height:35px;
+}
+.dynmap-logo {
+  filter:none;
+}
+.discord-button,
+.voice-button,
+.dynmap-button {
+  background-color:#5865f2;
+  padding:10px 30px;
+  width:100%;
+  text-align:center;
+  font-family: 'Montserrat';
+  border-radius: 30px;
+  border:1px solid #505ff4;
+  font-size:17px;
+  font-weight:600;
+  color:white;
+  margin:0;
+  transition: all 0.3s;
+}
+.voice-button {
+  background-color: #48FF67;
+  border:1px solid #2EC848;
+}
+.dynmap-button {
+  background-color: #659BFF;
+  border: 1px solid #4989FF;
+}
+.discord-button:hover {
+  background-color:#505ff4;
+}
+.voice-button:hover {
+  background-color: #2EC848;
+}
+.dynmap-button:hover {
+  background-color: #4989FF
+}
+
+.yellow-num {
+  color: #FFDF41;
+}
+.blue-num {
+  color: #415CFF;
+}
+.purple-num {
+  color:#9A41FF;
+}
+.green-num {
+  color:yellowgreen;
+}
