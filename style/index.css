@@ -46,12 +46,12 @@ canvas {
 
 /*starland title navbar*/
 .center-navbar-sl-logo-div {
-  height:4vh;
+  height:30px;
   margin-left:calc(50vw - 75px);
 }
 .center-navbar-sl-logo-img {
   /*height:30px;*/
-  height:4vh;
+  height:30px;
   vertical-align:-3px;
   transition:all 0.3s;
 }
@@ -61,9 +61,9 @@ canvas {
 }
 .center-navbar-sl-logo-img:active {
   filter:saturate(3);
-  height:3.8vh;
-  margin-top:calc(4vh - 3.8vh);
-  margin-left:calc(4vh - 3.8vh);
+  height:25px;
+  margin-top:calc(30px - 27.5px);
+  margin-left:calc(30px - 25px);
 }
 
 .left-navbar-ham-button {
@@ -117,11 +117,12 @@ canvas {
 }
 .server-description {
   font-family:'Montserrat';
-  font-size:4vw;
+  font-size:15px;
   color:white;
   margin-top: 20px;
-  width:400px;
-  margin-left: calc(50vw - 200px);
+  width:300px;
+  margin:auto;
+  margin-top:15px;
   text-align:center;
 
   
@@ -160,7 +161,7 @@ canvas {
 .wiki-button {
   width:100%;
   height:50px;
-  border:1px solid black;
+  border:1px solid #9FFF82;
   border-right:none;
   border-top-left-radius: 30px;
   border-bottom-left-radius: 30px;
@@ -168,11 +169,33 @@ canvas {
   background-color:#9FFF82;
   font-weight: 600;
   font-family: 'Montserrat';
+  --wiki-brightness:600%;
+  transition: all 0.3s;
+}
+.wiki-button:hover {
+  background:none;
+  border:1px solid rgba(159, 255, 130, 1);
+  color:#9FFF82;
+  --wiki-brightness: invert(81%) sepia(14%) saturate(1211%) hue-rotate(60deg) brightness(103%) contrast(113%);
+  
+}
+.wiki-logo {
+  margin-right: 5px;
+  height:23px;
+  vertical-align: middle;
+  filter:var(--wiki-brightness);
+  color:green;
+}
+.rules-logo {
+  margin-right: 5px;
+  height:23px;
+  vertical-align: middle;
+  filter:var(--rules-invert);
 }
 .rules-button {
   width:100%;
   height:50px;
-  border:1px solid black;
+  border:1px solid white;
   border-left:none;
   border-top-right-radius: 30px;
   border-bottom-right-radius: 30px;
@@ -180,6 +203,13 @@ canvas {
   background-color:#F2F2F2;
   font-weight: 600;
   font-family: 'Montserrat';
+  transition: all 0.3s;
+  --rules-invert:none;
+}
+.rules-button:hover {
+  background: none;
+  color:white;
+  --rules-invert:invert();
 }
 
 /****************/
