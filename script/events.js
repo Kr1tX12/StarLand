@@ -34,3 +34,10 @@ function toRules() {
 function toApplications() {
   document.location.href='applications.html'
 }
+function toY(y) {
+  window.scrollTo({
+    top: y,
+    left: 0,
+    behavior: 'smooth'
+ });
+}
