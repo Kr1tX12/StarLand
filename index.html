@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
     <link rel="stylesheet" href="style/index.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1 user-scalable=no">
-    <title>StarLand</title>
+    <title>StarLand — приватный сервер</title>
   </head>
   <body>
      <div class="window-gray" onclick="
@@ -30,7 +31,7 @@
           toHome();
         ">
           <div>
-            <img src="images/home-icon.png" class="other-page-img">
+            <img src="images/home-icon.png" class="other-page-img other-home-icon">
           </div>
           <div class="other-button-name" style="color:lightgreen">
             Домашняя страница
@@ -157,8 +158,27 @@
         </div>
       </div>
     </div>
-    <script src="script/starland.js"></script>
     
+    <div>
+      <div class="copy-ip-text">
+        Скопируй IP и играй! <br>
+        <select class="server-select">
+          <option value="main" >Основа</option>
+          <option value="academy" selected >Академия</option>
+        </select>
+      </div>
+      <div class="ip-copy-buttons">
+        <button class="bedrock-ip-copy-button">
+          Bedrock
+        </button>
+        <button class="java-ip-copy-button">
+          Java
+        </button>
+      </div>
+    </div>
+    
+    <script src="data/data.js"></script>
+    <script src="script/starland.js"></script>
     <script src="script/canvas.js"></script>
     <script src="script/events.js"></script>
   </body>

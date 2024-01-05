@@ -2,8 +2,16 @@ const canvas = document.querySelector('canvas');
 const c = canvas.getContext('2d');
 
 function resize() {
-  canvas.height = innerHeight;
-  canvas.width = innerWidth;
+  if (innerHeight > 750 && innerHeight < 1200) {
+    canvas.height = innerHeight;
+    canvas.width = innerWidth;
+  } else if (innerHeight >= 1500) {
+    canvas.height = 1200;
+    canvas.width = innerWidth;
+  } else {
+    canvas.height = 750;
+    canvas.width = innerWidth; 
+  }
 }
 addEventListener('resize', () => {
   
@@ -47,7 +55,8 @@ function init() {
   
   
   for (let i = 0; i<5; i++) {
-    circles.push(new Circle(Math.random()*canvas.width,Math.random()*canvas.height, (Math.random()*canvas.width/3)+canvas.width/5, `rgba(${Math.random()*150},${Math.random()*150},${(Math.random()*150)+100},0.2)`))
+    const downOffset = canvas.height > 750 ? 750 : 0;
+    circles.push(new Circle(Math.random()*canvas.width,Math.random()*canvas.height + downOffset, (Math.random()*canvas.width/3)+canvas.width/5, `rgba(${Math.random()*150},${Math.random()*150},${(Math.random()*150)+100},0.2)`))
   }
   
   for (let i = 0; i<circles.length; i++) {

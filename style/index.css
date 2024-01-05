@@ -5,12 +5,24 @@
   --bcg-night-color:#232323;
   --bcg-night2-color:#262626;
   --bcg-night3-color:#303030;
+  --bcg-night4-color:#2E2E2E;
+  
+  --bcg-transparent-night-color: rgba(35, 35, 35, 0.5);
+  
+  --text-green-color:white;
+  --text-purple-color:white;
+  --text-color:white;
+  --text-gray-color:#F6F6F6;
+  --text-cyan-color:white;
+  --text-yellow-color:white;
 }
+
 body {
-  background-color:var(--bcg-night-color);
+  background-color: var(--bcg-night-color);
   margin:0;
   font-family:'Montserrat' sans-serif;
   margin-bottom:100px;
+  transition:background-color 1s;
 }
 
 canvas {
@@ -19,21 +31,79 @@ canvas {
 
 /*navbar*/
 .navbar {
-  transition:all 0.5s;
+  transition:all 1s;
   z-index:100;
   position:fixed;
   left:0;
   right:0;
   top:0;
   backdrop-filter:blur(10px);
-  background:linear-gradient(to top, var(--bcg-night-color), transparent);
+  background: transparent;
+  border:none;
+  
 }
 .navbar-grid {
   padding:15px;
   display:grid;
-  grid-template-columns:30px 1fr;
+  grid-template-columns:30px 1fr 30px;
   align-items:center;
   
+}
+
+.navbar-theme-icon {
+  height:30px;
+  transition:all 1s;
+}
+.moon-icon {
+  filter:invert()
+  drop-shadow(0 0 3px #BABABA);;
+  
+}
+.mobile-icon {
+  height:25px;
+  margin-top:3px;
+}
+.sun-icon {
+  filter: drop-shadow(0 0 2px #F2FF48);
+}
+.navbar-theme-div {
+  flex:1;
+  text-align: right;
+  margin-right:10px;
+}
+/*COMPUTER NAVBAR*/
+
+.pc-navbar-grid {
+  padding:15px;
+  display:flex;
+  align-items: center;
+}
+.pc-navbar-sl-logo-img {
+  height: 30px;
+  transition:all 0.3s;
+}
+.pc-navbar-logo-button {
+  background: transparent;
+  border:none;
+}
+.pc-navbar-sl-logo-div {
+  height: 30px;
+  flex:1;
+}
+
+
+.pc-navbar-click:hover {
+  background-color: var(--bcg-night3-color);
+}
+.pc-navbar-click {
+  transition: all 0.2s;
+  background:none;
+  border:none;
+  color:var(--text-color);
+  font-family: 'Montserrat';
+  margin:2px;
+  padding:10px 15px;
+  border-radius: 20px;
 }
 
 /*hamburger icon*/
@@ -42,6 +112,7 @@ canvas {
 }
 .left-navbar-ham-icon-img {
   height:30px;
+  transition:all 1s;
 }
 
 /*starland title navbar*/
@@ -54,12 +125,14 @@ canvas {
   height:30px;
   vertical-align:-3px;
   transition:all 0.3s;
+  
 }
 .navbar-logo-button {
   background:none;
   border:none;
 }
-.center-navbar-sl-logo-img:active {
+.center-navbar-sl-logo-img:active,
+.pc-navbar-sl-logo-img:active {
   filter:saturate(3);
   height:25px;
   margin-top:calc(30px - 27.5px);
@@ -70,13 +143,7 @@ canvas {
   background: none;
   border:none;
 }
-.wiki-rules-buttons-div {
-  display:grid;
-  grid-template-columns: 150px 150px;
-  margin:0 30px;
-  margin-top: 10px;
-  margin-left: calc(50vw - 150px)
-}
+
 
 
 /********************/
@@ -106,32 +173,34 @@ canvas {
   font-family:'Montserrat';
   font-weight:700;
   font-size:15vw;
-  color:white;
+  
   text-align: center;
   
   animation: 0.7s ease-out 0s 1 alternate text-show;
   
-  background: -webkit-linear-gradient(#FFFFFF, #A2AAFF);
+  background: -webkit-linear-gradient(var(--text-purple-color), #A2AAFF);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 .server-description {
   font-family:'Montserrat';
   font-size:15px;
-  color:white;
+  color:var(--text-color);
   margin-top: 20px;
   width:300px;
   margin:auto;
   margin-top:15px;
   text-align:center;
 
-  
-  background: -webkit-linear-gradient(#FFFFFF, #F6F6F6);
+  background: -webkit-linear-gradient(var(--text-color), var(--text-gray-color));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  
+  transition:all 1s;
 }
 .free-and-private-text {
-  background: -webkit-linear-gradient(#FFFFFF, #9BFF5A);
+  font-weight:500;
+  background: -webkit-linear-gradient(var(--text-green-color), #9BFF5A);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -152,11 +221,19 @@ canvas {
   font-size:17px;
   font-weight:600;
   color:white;
+  margin:auto;
   margin-left:calc(50vw - 150px);
   margin-top:250px;
 }
 .discord-button:hover {
   background-color:#505ff4;
+}
+.wiki-rules-buttons-div {
+  display:grid;
+  grid-template-columns: 150px 150px;
+  margin:0 30px;
+  margin-top: 10px;
+  margin-left: calc(50vw - 150px);
 }
 .wiki-button {
   width:100%;
@@ -227,15 +304,17 @@ canvas {
   font-family: 'Montserrat';
   font-weight:700;
   
-  background: -webkit-linear-gradient(#FFFFFF, #5865f2);
+  background: -webkit-linear-gradient(var(--text-purple-color), #5865f2);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  
+  transition:all 1s;
 }
 .stat-description {
-  color:white;
+  color:var(--text-color);
   text-align:center;
   font-family: 'Montserrat';
-  
+  transition:all 1s;
 }
 
 .server-stat-part {
@@ -243,19 +322,22 @@ canvas {
   padding:100px 0;
   background-color: var(--bcg-night2-color);
   border-radius:20px;
+  transition:background 1s;
 }
 .stat-part {
   margin-bottom:50px;
 }
 .cyan-gradient {
-  background: -webkit-linear-gradient(#FFFFFF, #4AC0FF);
+  background: -webkit-linear-gradient(var(--text-cyan-color), #30CFFF);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  transition:all 1s;
 }
 .yellow-gradient {
-  background: -webkit-linear-gradient(#FFFFFF, #FFF13F);
+  background: -webkit-linear-gradient(var(--text-yellow-color), #FFF13F);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  transition:all 1s;
 }
 .stat-part {
   margin-left: -100px;
@@ -318,7 +400,7 @@ canvas {
   align-items: center;
 }
 .other-text {
-  color:white;
+  color:var(--text-color);
   font-family:'Montserrat';
   font-size:20px;
   font-weight: 600;
@@ -333,7 +415,6 @@ canvas {
 
 .other-close-icon {
   height:30px;
-  filter:brightness(1000%);
 }
 
 .other-page-img {
@@ -357,8 +438,57 @@ canvas {
   border-radius:10px;
 }
 .other-button-name {
-  color:white;
+  color:var(--text-color);
   font-family: 'Montserrat';
   font-weight: 500;
   margin-left:0;
+  
+}
+
+
+.copy-ip-text {
+  transition:all 1s;
+  color:var(--text-color); 
+  text-align:center;
+  font-family: 'Montserrat';
+  font-weight: 600;
+  font-size: 20px;
+}
+.server-select {
+  transition:all 1s;
+  background:none;
+  border:none;
+  color:var(--text-color);
+  text-align: right;
+  font-weight: 500;
+  font-family: 'Montserrat';
+}
+.server-select:hover {
+  outline:none;
+}
+.java-ip-copy-button,
+.bedrock-ip-copy-button {
+  transition:all 1s;
+  border:none;
+  padding:16px 0;
+  border-radius:50px;
+  width:130px;
+  margin-top:20px;
+  color:var(--text-color);
+  font-family: 'Montserrat';
+  font-size: 17px;
+  font-weight: 600;
+  background: var(--bcg-night2-color);
+  transition: all 0.2s, background 1s;
+  
+}
+.java-ip-copy-button {
+  border:1px solid #4ACE6D;
+}
+.bedrock-ip-copy-button {
+  border:1px solid #DC9B2D;
+}
+
+.ip-copy-buttons {
+  margin-left:calc(50vw - 130px);
 }

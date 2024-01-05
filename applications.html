@@ -2,6 +2,7 @@
 <html>
 <head>
   <link rel="stylesheet" href="style/index.css">
+  <link rel="stylesheet" href="style/applications.css"
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>StarLand Заявки</title>
@@ -30,7 +31,7 @@
           toHome();
         ">
           <div>
-            <img src="images/home-icon.png" class="other-page-img">
+            <img src="images/home-icon.png" class="other-page-img other-home-icon">
           </div>
           <div class="other-button-name">
             Домашняя страница
@@ -87,10 +88,30 @@
           </button>
           
          </div>
-       <div>
+       </div>
     </div>
   </div>
   
+  <div class="wiki-top-part">
+    <div class="wiki-logo2">
+      <div class="wiki-back-button" onclick="
+        toHome();
+      ">
+        <img src="images/back-icon.png" class="wiki-back-icon">
+      </div>
+      <div class="wiki-text">
+        Заявки на сервер
+      </div>
+    </div>
+  </div>
+  <p class="applications-dev">Заявки на сайте сейчас в разработке, а пока можете отправить её через наш дискорд сервер:</p>
+  <button class="discord-button" onclick="window.open('https://discord.com/invite/bc4NDs7CVg')
+          "><img class="discord-logo" src="https://assets-global.website-files.com/6257adef93867e50d84d30e2/636e0a6a49cf127bf92de1e2_icon_clyde_blurple_RGB.png"> Наш Дискорд </button>
+          
+          
+  <script src="data/data.js"></script>        
   <script src="script/events.js"></script>
+  <script src="script/applications.js"></script>
+  <script scr="script/starland.js"></script>
 </body>
 </html>

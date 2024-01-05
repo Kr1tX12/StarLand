@@ -15,7 +15,7 @@
   filter:invert();
 }
 .wiki-text {
-  color:white;
+  color:var(--text-color);
   margin-left:15px;
   font-family:'Montserrat';
   font-size:22px;
@@ -27,6 +27,7 @@
   padding:30px 10px;
   border-radius:10px;
   background-color: var(--bcg-night2-color);
+  transition: all 1s;
 }
 
 @keyframes text-left-show {
@@ -53,11 +54,11 @@
 .wiki-content-subpart {
   background:var(--bcg-night3-color);
   margin-left:30px;
-  border:1px solid lightgray;
+  border:1px solid #454545;
   transition: all 0.2s;
 }
 .wiki-content-subpart:hover {
-  background:#464646;
+  background:var(--bcg-night4-color);
 }
 .wiki-content-part-link {
   font-weight: 700;
@@ -65,7 +66,8 @@
 }
 .wiki-content-part-sublink {
   font-weight: 600;
-  color:white;
+  color:var(--text-color);
+  transition: all 1s;
 }
 
 
@@ -75,36 +77,40 @@
   
 }
 .wiki-name {
-  color:white;
+  color:var(--text-color);
   font-family: 'Montserrat';
   font-weight: 600;
   font-size: 25px;
+  transition: all 1s;
 }
 .wiki-description {
-  color:white;
+  color:var(--text-color);
   font-family: 'Montserrat';
   font-size:15px;
   margin-top:13px;
+  transition: all 1s;
 }
 .wiki-num {
   color:#FFE151;
 }
 .wiki-warning {
-  background-color: #2E2E2E;
+  background-color: var(--bcg-night4-color);
   border:1px solid #434343;
   padding:14px 20px;
   border-radius: 15px;
   margin-top: 10px;
-  color:white;
+  color:var(--text-color);
   font-family: 'Montserrat';
   font-size: 16px;
+  transition: all 1s;
 }
 .wiki-name-main {
   text-align: center;
-  background-color: #2D2D2D;
+  background-color: var(--bcg-night4-color);
   border:1px solid #434343;
   border-radius:10px;
   padding:10px;
+  transition: all 1s;
 }
 
 .discord-logo,

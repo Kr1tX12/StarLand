@@ -70,3 +70,16 @@ for (let i = 0; i<wiki.length; i++) {
 
 
 document.querySelector('.wiki-content').innerHTML = html;
+
+addEventListener('resize', () => {
+  onResizeWiki();
+})
+
+function onResizeWiki() {
+  if (innerWidth > 1300 && document.location.href.includes('wiki.html')) {
+    document.body.style.margin = '90px 350px';
+  } else if (document.location.href.includes('wiki.html')) {
+    document.body.style.margin = '90px 0';
+  }
+}
+onResizeWiki();
