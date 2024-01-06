@@ -55,8 +55,10 @@ console.log(html2)
 function onResizeQuestions() {
   if (innerWidth > 1300 && document.location.href.includes('questions.html')) {
     document.body.style.margin = '0 350px';
+    document.body.style.marginTop = '100px';
   } else if (document.location.href.includes('questions.html')) {
     document.body.style.margin = '0';
+    document.body.style.marginTop = '100px';
   }
 }
 onResizeQuestions();
