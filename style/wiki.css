@@ -1,3 +1,6 @@
+body {
+  overflow-x: hidden;
+}
 .wiki-logo2 {
   display:grid;
   grid-template-columns: 40px 1fr;
@@ -111,6 +114,7 @@
   border-radius:10px;
   padding:10px;
   transition: all 1s;
+  margin: 20px 100px;
 }
 
 .discord-logo,
@@ -165,12 +169,32 @@
 .yellow-num {
   color: #FFDF41;
 }
+.yellow-gradient {
+  background: rgb(246,255,59);
+  background: linear-gradient(252deg, rgba(246,255,59,1) 0%, rgba(251,255,213,1) 100%);
+  -webkit-text-fill-color: black;
+}
 .blue-num {
   color: #415CFF;
+}
+.blue-gradient {
+  background: rgb(215,255,255);
+  background: linear-gradient(97deg, rgba(215,255,255,1) 0%, rgba(0,99,255,1) 100%);
 }
 .purple-num {
   color:#9A41FF;
 }
+.purple-gradient {
+  background: rgb(255,232,252);
+  background: linear-gradient(97deg, rgba(255,232,252,1) 0%, rgba(194,46,136,1) 100%);
+}
 .green-num {
   color:yellowgreen;
+}
+.green-gradient {
+  background: rgb(218,255,215);
+  background: linear-gradient(97deg, rgba(218,255,215,1) 0%, rgba(46,194,75,1) 100%);
+}
+.red-num {
+  color:#FF3D3D;
 }

@@ -1,4 +1,5 @@
 body {
+  overflow-x: hidden;
   margin-top:90px;
 }
 .wiki-logo2 {

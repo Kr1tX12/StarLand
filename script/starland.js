@@ -3,10 +3,12 @@ let nowJavaIp = javaAcademyIp;
 
 
 //обновляет сайт каждые 100 миллисекунд
-setInterval(() => {
+addEventListener('resize', () => {
   updateStarland();
-}, 100);
-
+});
+addEventListener('scroll', () => {
+  updateStarland();
+});
 updateStarland();
 
 //функция будет обновлять сайт
@@ -38,7 +40,25 @@ function updateStarland() {
   } else {
     setMobileVersion();
   }
-  
+  if (innerWidth > 1220) {
+    document.querySelector('.instruction').style.margin = '100px 400px';
+  } else {
+    document.querySelector('.instruction').style.margin = '100px 50px'
+  }
+  if (innerWidth > 1450) {
+    document.querySelector('.server-stat-part').style.margin = '70px 400px';
+
+    document.querySelectorAll('.stat-img').forEach(element => {
+      element.style.width = '200px'
+      element.style.marginLeft = 'calc(50vw - 100px - 400px)'
+    })
+  } else if (innerWidth > widthToPcVersion) {
+    document.querySelector('.server-stat-part').style.margin = '70px 300px';
+    document.querySelectorAll('.stat-img').forEach(element => {
+      element.style.width = '200px'
+      element.style.marginLeft = 'calc(50vw - 100px - 300px)'
+    })
+  }
 }
 
 //устанавливает компьютерную версию сайта
@@ -68,6 +88,12 @@ function setPcVersion() {
     })
 
     document.querySelector('.server-stat-part').style.margin = '70px 300px';
+   
+      document.querySelector('.starland-gallery').style.margin = '30px 450px'
+      document.querySelectorAll('.starland-gallery-part img').forEach(elem => {
+        elem.style.width = 'calc(100vw - 450px * 2)';
+      })
+    
     
 }
 
@@ -94,6 +120,11 @@ function setMobileVersion() {
     })
 
     document.querySelector('.server-stat-part').style.margin = '70px 25px'
+
+    document.querySelector('.starland-gallery').style.margin = '30px 10px'
+    document.querySelectorAll('.starland-gallery-part img').forEach(elem => {
+      elem.style.width = 'calc(100vw - 10px * 2)';
+    })
     
 }
 
@@ -166,3 +197,65 @@ function copyText(text) {
 
   document.body.removeChild(textArea);
 }
+
+
+
+document.querySelectorAll('.starland-gallery-part img').forEach(elem => {
+  elem.style.transform = `perspective(400px) rotate3d(${getRandomInt(-1,2)},${getRandomInt(-1,2)}, 0, ${version === 'PC' ? 5 : 15}deg)`;
+  elem.addEventListener('click', () => {
+    elem.style.transform = `perspective(400px) rotate3d(${getRandomInt(-1,2)},${getRandomInt(-1,2)}, 0, ${version === 'PC' ? 5 : 15}deg)`;
+  })
+});
+
+
+setInterval(() => {
+  selectNextImages();
+}, 5000)
+
+function selectNextImages() {
+  setTimeout(() => {
+    document.querySelector('.starland-gallery-online').style.transform = `perspective(400px) rotate3d(${getRandomInt(-1,2)},${getRandomInt(-1,2)}, 0, ${version === 'PC' ? 5 : 15}deg)`
+    document.querySelector('.starland-gallery-online').src = `images/screen${getRandomInt(1,3)}.png`
+  }, getRandomInt(100, 2500));
+  document.querySelector('.starland-gallery-building').style.transform = `perspective(400px) rotate3d(${getRandomInt(-1,2)},${getRandomInt(-1,2)}, 0, ${version === 'PC' ? 5 : 15}deg)`;
+  document.querySelector('.starland-gallery-building').src = `images/building${getRandomInt(1,6)}.png`
+}
+
+function getRandomInt(min, max) {
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  return Math.floor(Math.random() * (max - min) + min); // Максимум не включается, минимум включается
+}
+
+
+let colorH = getRandomInt(0,300);
+document.querySelectorAll('.instruction-num').forEach(elem => {
+  colorH += getRandomInt(5,10);
+  elem.style.color = `hsl(${colorH}, 100%, 50%)`
+})
+
+
+let xRotate = 0;
+let yRotate = 1;
+let dx = 0.01;
+let dy = -0.01;
+setInterval(() => {
+  elem = document.querySelector('.sl-logo-top-part');
+  elem.style.transform = `perspective(400px) rotate3d(${xRotate},${yRotate},0,20deg)`
+  elem2 = document.querySelector('.ip-chest-icon');
+  elem2.style.transform = `perspective(400px) rotate3d(${xRotate},${yRotate},0,20deg)`
+  xRotate += dx;
+  yRotate += dy;
+  if (xRotate >= 1.5) {
+    dx = -0.01;
+  }
+  if (yRotate >= 1.5) {
+    dy = -0.01;
+  }
+  if (xRotate <= -1.5) {
+    dx = 0.01;
+  }
+  if (yRotate <= -1.5) {
+    dy = 0.01;
+  }
+},10)

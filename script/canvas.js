@@ -23,8 +23,8 @@ class Circle {
     this.radius = radius;
     this.color = color;
     this.velocity = {
-      x:(Math.random()-0.5)*20,
-      y:(Math.random()-0.5)*20,
+      x:(Math.random()-0.5)*canvas.width /30,
+      y:(Math.random()-0.5)*canvas.width /30,
     }
   }
   draw() {
@@ -65,13 +65,46 @@ function init() {
 }
 function animation() {
   
-  /*setInterval(() => {
+  setInterval(() => {
      c.clearRect(0,0,canvas.width, canvas.height)
      for (let i = 0; i<circles.length; i++) {
        circles[i].update();
      }
-  },100)*/
+  },150)
   
 }
+animation()
 resize();
 init();
+
+
+
+function drawStar(cx,cy,spikes,outerRadius,innerRadius){
+  var rot=Math.PI/2*3;
+  var x=cx;
+  var y=cy;
+  var step=Math.PI/spikes;
+
+  c.beginPath();
+  c.moveTo(cx,cy-outerRadius)
+  for(i=0;i<spikes;i++){
+    x=cx+Math.cos(rot)*outerRadius;
+    y=cy+Math.sin(rot)*outerRadius;
+    c.lineTo(x,y)
+    rot+=step
+
+    x=cx+Math.cos(rot)*innerRadius;
+    y=cy+Math.sin(rot)*innerRadius;
+    c.lineTo(x,y)
+    rot+=step
+  }
+  c.lineTo(cx,cy-outerRadius);
+  c.closePath();
+  c.lineWidth=5;
+  c.strokeStyle='blue';
+  c.stroke();
+  c.fillStyle='skyblue';
+  c.fill();
+}
+
+drawStar(100,100,5,30,15);

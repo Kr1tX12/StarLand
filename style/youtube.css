@@ -1,0 +1,39 @@
+body {
+    overflow-x: hidden;
+    margin-top: 90px;
+}
+.youtube-logo2 {
+    display:grid;
+    grid-template-columns: 40px 1fr;
+    align-items: center;
+    margin:10px 20px;
+    
+    background: -webkit-linear-gradient(#FFFFFF, #7FFF8F);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    
+    animation: 0.5s ease-out 0s 1 alternate text-show;
+  }
+  .youtube-back-icon {
+    height:40px;
+    filter:invert();
+    transition: all 1s;
+  }
+  .youtube-text {
+    color:var(--text-color);
+    margin-left:15px;
+    font-family:'Montserrat';
+    font-size:22px;
+    font-weight: 600;
+    transition: all 1s;
+  }
+  @keyframes text-left-show {
+    0% {
+      opacity:0;
+      margin-left:-100px;
+    }
+    100% {
+      opacity:1;
+      margin-left:15px;
+    }
+  }

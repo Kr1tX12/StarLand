@@ -67,7 +67,29 @@
             Заявка на сервер
           </div>
         </div>
+
+        <div class="other-applications-page other-button-part" onclick="
+          toQuestions();
+        ">
+          <div>
+            <img src="images/question-icon.png" style="filter:invert()" class="other-page-img">
+          </div>
+          <div class="other-button-name">
+            Вопросы
+          </div>
+        </div>
         
+        <div class="other-applications-page other-button-part" onclick="
+      toYoutube();
+    ">
+      <div>
+        <img src="images/youtube-icon.png" style="filter:invert()" class="other-page-img">
+      </div>
+      <div class="other-button-name">
+        Видео
+      </div>
+    </div>
+    
       </div>
     </div>
     <!--Navbar-->
@@ -97,6 +119,7 @@
     <div class="top-part">
       <canvas> </canvas>
       <div class="top-part-inside">
+        <img src="images/sl-logo.jpg" class="sl-logo-top-part">
         <div class="starland-title">
            StarLand
         </div>
@@ -160,6 +183,7 @@
     </div>
     
     <div>
+      <img class="ip-chest-icon" src="images/chest-icon.png">
       <div class="copy-ip-text">
         Скопируй IP и играй! <br>
         <select class="server-select">
@@ -177,7 +201,49 @@
       </div>
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/context-filter-polyfill/dist/index.min.js"></script>
+
+    <div class="starland-gallery">
+      <div class="starland-gallery-part">
+        Большой онлайн<br>
+        <img class="starland-gallery-img  starland-gallery-online" src="images/screen1.png">
+      </div>
+    </div>
+    
+
+    <div class="instruction">
+      <img src="images/minecraft-icon.png" class="instruction-minecraft-icon">
+      <div class="instruction-logo">
+        Как попасть на сервер
+      </div>
+
+      <div class="instruction-content">
+        <div class="instruction-part">
+          <span class="instruction-num">1.</span> Зайдите в наш <a class="s" href="https://discord.com/invite/bc4NDs7CVg">дискорд</a>
+        </div>
+        <div class="instruction-part">
+          <span class="instruction-num">2.</span> Отправьте заявку
+        </div>
+        <div class="instruction-part">
+          <span class="instruction-num">3.</span> Ждите когда вам напишет бот SL
+        </div>
+        <div class="instruction-part">
+          <span class="instruction-num">4.</span><u><a onclick="
+              window.scrollTo({
+                top: 1900,
+                left: 0,
+                behavior: 'smooth'
+            });
+          ">Скопируйте IP</a></u> и играйте!
+        </div>
+      </div>
+    </div>
+
+    <div class="starland-gallery"></div>
+      <div class="starland-gallery-part">
+        Красивые постройки<br>
+        <img class="starland-gallery-img starland-gallery-building" src="images/building1.png">
+      </div>
+    </div>
     <script src="data/data.js"></script>
     <script src="script/starland.js"></script>
     <script src="script/canvas.js"></script>

@@ -1,15 +1,23 @@
 let html2 = '';
 for (let i = 0; i<wiki.length; i++) {
   let spanClass;
-  if (wiki[i].num < 2) {
+  if (wiki[i].num < 1) { 
+    spanClass = 'red-num';
+  } else if (wiki[i].num < 2) {
     spanClass = 'purple-num'
+    gradClass = 'purple-gradient'
   } else if (wiki[i].num < 3) {
     spanClass = 'yellow-num'
+    gradClass = 'yellow-gradient'
   } else if (wiki[i].num < 4) {
     spanClass = 'blue-num'
+    gradClass = 'blue-gradient'
   } else {
     spanClass = 'green-num'
+    gradClass = 'green-gradient'
   }
+
+
   if (wiki[i].text && wiki[i].warning) {
     html2 += `<div class="wiki wiki-num${i}">
       <div class="wiki-name">
@@ -33,7 +41,7 @@ for (let i = 0; i<wiki.length; i++) {
     </div>`
   } else if (wiki[i].mainName) {
     html2 += `<div class="wiki wiki-num${i}">
-      <div class="wiki-name wiki-name-main">
+      <div class="${gradClass} wiki-name wiki-name-main">
         <span class="wiki-num-main">${wiki[i].num}.</span> ${wiki[i].mainName}
       </div>
     </div>`
@@ -49,17 +57,34 @@ for (let i = 0; i<wiki.length; i++) {
   const xPosition = rect.left;
   const yPosition = rect.top;
   
+  let spanClass;
+  if (wiki[i].num < 1) { 
+    spanClass = 'red-num';
+  } else if (wiki[i].num < 2) {
+    spanClass = 'purple-num'
+    gradClass = 'purple-gradient'
+  } else if (wiki[i].num < 3) {
+    spanClass = 'yellow-num'
+    gradClass = 'yellow-gradient'
+  } else if (wiki[i].num < 4) {
+    spanClass = 'blue-num'
+    gradClass = 'blue-gradient'
+  } else {
+    spanClass = 'green-num'
+    gradClass = 'green-gradient'
+  }
+
   if (!wiki[i].mainName) {
     html += `
     <div class="wiki-content-part wiki-content-subpart" onclick="
       toY(${yPosition + 500})
     ">
-      <a class="wiki-content-part-link wiki-content-part-sublink">${wiki[i].num} ${wiki[i].name}</a>
+      <a class="wiki-content-part-link wiki-content-part-sublink"><span class="${spanClass}">${wiki[i].num}</span> ${wiki[i].name}</a>
     </div>
    `
   } else {
     html += `
-    <div class="wiki-content-part" onclick="
+    <div class="${gradClass} wiki-content-part" onclick="
       toY(${yPosition + 500})
     ">
       <a class="wiki-content-part-link">${wiki[i].num} ${wiki[i].mainName}</a>

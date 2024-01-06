@@ -4,14 +4,20 @@ for (let i = 0; i<rules.length;i++) {
   
 
   let spanClass;
-  if (rules[i].num < 2) {
+  if (rules[i].num < 1) { 
+    spanClass = 'red-num';
+  } else if (rules[i].num < 2) {
     spanClass = 'purple-num'
+    gradClass = 'purple-gradient'
   } else if (rules[i].num < 3) {
     spanClass = 'yellow-num'
+    gradClass = 'yellow-gradient'
   } else if (rules[i].num < 4) {
     spanClass = 'blue-num'
+    gradClass = 'blue-gradient'
   } else {
     spanClass = 'green-num'
+    gradClass = 'green-gradient'
   }
   
   if (rules[i].desc && rules[i].warning && rules[i].sub) {
@@ -37,7 +43,7 @@ for (let i = 0; i<rules.length;i++) {
     </div>`
   } else if (!rules[i].sub) {
     html2 += `<div class="rule rule-num${i}">
-      <div class="rule-name rule-name-main">
+      <div class="${gradClass} rule-name rule-name-main">
         <span class="rule-num-main">${rules[i].num}.</span> ${rules[i].name}
       </div>
     </div>`
@@ -58,20 +64,37 @@ for (let i = 0; i<rules.length; i++) {
   const xPosition = rect.left;
   const yPosition = rect.top;
   
+  let spanClass;
+  if (rules[i].num < 1) { 
+    spanClass = 'red-num';
+  } else if (rules[i].num < 2) {
+    spanClass = 'purple-num'
+    gradClass = 'purple-gradient'
+  } else if (rules[i].num < 3) {
+    spanClass = 'yellow-num'
+    gradClass = 'yellow-gradient'
+  } else if (rules[i].num < 4) {
+    spanClass = 'blue-num'
+    gradClass = 'blue-gradient'
+  } else {
+    spanClass = 'green-num'
+    gradClass = 'green-gradient'
+  }
+  
   if (rules[i].sub) {
     html += `
     <div class="rules-content-part rules-content-subpart" onclick="
-      toY(${yPosition+1700})
+      toY(${yPosition+innerHeight*2})
     ">
-      <a class="rules-content-part-link rules-content-part-sublink">${rules[i].num} ${rules[i].name}</a>
+      <p class="rules-content-part-link rules-content-part-sublink"><span class="${spanClass}">${rules[i].num}</span> ${rules[i].name}</p>
     </div>
    `
   } else {
     html += `
-    <div class="rules-content-part" onclick="
-      toY(${yPosition+1700})
+    <div class="${gradClass} rules-content-part" onclick="
+      toY(${yPosition+innerHeight*2})
     ">
-      <a class="rules-content-part-link">${rules[i].num} ${rules[i].name}</a>
+      <p class="rules-content-part-link"><img class="rules-content-img" src="${rules[i].img}"> ${rules[i].name}</p>
     </div>
    `
   }

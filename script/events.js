@@ -36,6 +36,12 @@ function toWiki() {
 function toRules() {
   document.location.href='rules.html'
 }
+function toQuestions() {
+  document.location.href='questions.html'
+}
+function toYoutube() {
+  document.location.href='youtube.html'
+}
 function toApplications() {
   document.location.href='applications.html'
 }
@@ -95,7 +101,8 @@ function setPcNavbar() {
         <button onclick="toWiki();" class="pc-navbar-click" >Вики</button>
         <button onclick="toRules();" class="pc-navbar-click"> Правила</button>
         <button onclick="toApplications();" class="pc-navbar-click">Заявки</button>
-        <button onclick="toHome(); alert('Пока находится в разработке')" class="pc-navbar-click" >Видео</button>
+        <button onclick="toQuestions();" class="pc-navbar-click">Вопросы</button>
+        <button onclick="toYoutube();" class="pc-navbar-click">Видео</button>
         
         <div class="navbar-theme-div" onclick="
           changeTheme();

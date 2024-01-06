@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="style/index.css">
+  <link rel="stylesheet" href="style/youtube.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1 user-scalable=no">
+  <title>StarLand Вики</title>
+</head>
+<body>
+  <div class="window-gray" onclick="
+       otherWindowClose();
+     ">
+  </div>
+    <div class="other-window">
+      <div class="other-text-div">
+        <div class="other-text">
+          Страницы
+        </div>
+        <div class="other-close-button-div">
+          <button class="other-close-button"onclick="
+            otherWindowClose();
+          ">
+            <img src="images/close-icon.png" class="other-close-icon">
+          </button>
+        </div>
+      </div>
+      <div class="other-buttons">
+        <div class="other-main-page other-button-part" onclick="
+          toHome();
+        ">
+          <div>
+            <img src="images/home-icon.png" class="other-page-img other-home-icon">
+          </div>
+          <div class="other-button-name">
+            Домашняя страница
+          </div>
+        </div>
+        <div class="other-wiki-page other-button-part" onclick="
+          toWiki();
+        ">
+          <div>
+            <img src="images/wiki-icon.png" style="filter:invert()" class="other-page-img">
+          </div>
+          <div class="other-button-name">
+            Википедия сервера
+          </div>
+        </div>
+        <div class="other-rules-page other-button-part" onclick="
+          toRules();
+        ">
+          <div>
+            <img src="images/rules-icon.png" style="filter:invert()" class="other-page-img">
+          </div>
+          <div class="other-button-name">
+            Правила
+          </div>
+        </div>
+        <div class="other-applications-page other-button-part" onclick="
+          toApplications();
+        ">
+          <div>
+            <img src="images/applications-icon.png" style="filter:invert()" class="other-page-img">
+          </div>
+          <div class="other-button-name">
+            Заявка на сервер
+          </div>
+        </div>
+        <div class="other-applications-page other-button-part" onclick="
+        toQuestions();
+      ">
+        <div>
+          <img src="images/question-icon.png" style="filter:invert()" class="other-page-img">
+        </div>
+        <div class="other-button-name">
+          Вопросы
+        </div>
+      </div>
+      <div class="other-applications-page other-button-part" onclick="
+      toYoutube();
+    ">
+      <div>
+        <img src="images/youtube-icon.png" style="filter:invert()" class="other-page-img">
+      </div>
+      <div class="other-button-name" style="color:lightgreen">
+        Видео
+      </div>
+    </div>
+    
+      </div>
+    </div>
+    <!--Navbar-->
+    <div class="navbar">
+      <div class="navbar-grid">
+        <div class="left-navbar-ham-icon-div">
+          <button class="left-navbar-ham-button" onclick="
+            otherWindowOpen();
+          ">
+            <img class="left-navbar-ham-icon-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/Hamburger_icon_white.svg/1200px-Hamburger_icon_white.svg.png">
+          </button>
+        </div>
+        <div class="center-navbar-sl-logo-div">
+          <button class="navbar-logo-button" onclick="
+            toHome();
+          ">
+            <img class="center-navbar-sl-logo-img" src="images/sl-title.png">
+          </button>
+          
+         </div>
+       </div>
+     </div>
+  </div>
+  
+  
+  
+  
+  <div class="youtube-top-part">
+    <div class="youtube-logo2">
+      <div class="youtube-back-button" onclick="
+        toHome();
+      ">
+        <img src="images/back-icon.png" class="youtube-back-icon">
+      </div>
+      <div class="youtube-text">
+        StarLand YouTube в Разработке
+      </div>
+    </div>
+  </div>
+  
+  <script src="data/data.js"></script>
+  <script src="script/events.js"></script>
+  <script src="script/questions.js"></script>
+  
+</body>
+</html>

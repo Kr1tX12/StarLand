@@ -23,6 +23,7 @@ body {
   font-family:'Montserrat' sans-serif;
   margin-bottom:100px;
   transition:background-color 1s;
+  overflow-x: hidden;
 }
 
 canvas {
@@ -181,6 +182,8 @@ canvas {
   background: -webkit-linear-gradient(var(--text-purple-color), #A2AAFF);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  
+  transition:all 1s;
 }
 .server-description {
   font-family:'Montserrat';
@@ -434,7 +437,7 @@ canvas {
   transition: all 0.2s;
 }
 .other-button-part:hover {
-  background-color:#303030;
+  background-color:var(--bcg-night3-color);
   border-radius:10px;
 }
 .other-button-name {
@@ -491,4 +494,98 @@ canvas {
 
 .ip-copy-buttons {
   margin-left:calc(50vw - 130px);
+}
+
+/*StarLand Gallery Part*/
+
+.starland-gallery {
+  margin:30px 450px;
+  margin-top: 100px;
+}
+.starland-gallery-part img {
+  -webkit-mask:
+    linear-gradient(135deg,#000c 40%,#000,#000c 60%)
+    100% 100%/240% 240%;
+  width:calc(100vw - 450px * 2);
+  border-radius: 10px;
+  margin-top: 10px;
+  transition: all 0.4s;
+}
+.starland-gallery-part img:hover {
+  -webkit-mask-position: 0 0;
+}
+.starland-gallery-part {
+  font-weight: 600;
+  margin-top: 90px;
+  font-size: 35px;
+  color:var(--text-color);
+  font-family: 'Montserrat';
+  text-align: center;
+}
+
+.instruction-logo {
+  font-size: 35px;
+  color:var(--text-color);
+  font-weight: 700;
+  text-align: center;
+  font-family: 'Montserrat';
+  margin-bottom: 20px;
+  
+  background: -webkit-linear-gradient(var(--text-purple-color), #A2AAFF);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.instruction {
+  margin:100px 400px;
+}
+.instruction-part {
+  color:var(--text-color);
+  text-align: center;
+  font-size: 20px;
+  font-family: 'Montserrat';
+  margin-top: 10px;
+  transition: all 1s;
+  
+}
+.instruction-content {
+  background-color: var(--bcg-night3-color);
+  padding:20px;
+  border-radius: 20px;
+  transition: all 1s;
+}
+.instruction-num {
+font-weight: 600;
+}
+a:link {
+  color: rgb(39, 176, 255);
+}
+a:visited {
+  color: rgb(39, 176, 255);
+}
+a:active {
+  color: rgb(39, 176, 255);
+}
+a:hover {
+  color: rgb(39, 176, 255);
+}
+.instruction-minecraft-icon {
+  width:100px;
+  margin-left:calc(50% - 50px)
+}
+
+.sl-logo-top-part,
+.ip-chest-icon {
+  width:100px;
+  margin-top: 10px;
+  margin-left:calc(50% - 100px / 2);
+  border-radius: 30px;
+  border:1px solid var(--bcg-night4-color);
+  transition: all 0.2s;
+  transform: perspective(400px) rotate3d(1,1,0,20deg);
+}
+.sl-logo-top-part:hover {
+  width:110px;
+  margin-left:calc(50% - 110px / 2);
+  margin-top: 5px;
+  transform: perspective(400px) rotate3d(0,0,0,8deg);
 }
