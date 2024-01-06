@@ -181,6 +181,9 @@ function changeTheme() {
     } catch (exception) {
 
     }
+    document.querySelectorAll('.soc-icon').forEach(elem => {
+      elem.style.filter = 'none'
+    })
     theme = 'light';
   } else {
     tElem.src = 'images/moon-icon.png';
@@ -221,7 +224,9 @@ function changeTheme() {
     }
     theme = 'dark';
     
-    
+    document.querySelectorAll('.soc-icon').forEach(elem => {
+      elem.style.filter = 'invert()'
+    });
   }
   
 }

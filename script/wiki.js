@@ -103,8 +103,10 @@ addEventListener('resize', () => {
 function onResizeWiki() {
   if (innerWidth > 1300 && document.location.href.includes('wiki.html')) {
     document.body.style.margin = '90px 350px';
+    document.querySelector('.wiki-name-main').style.margin = '20px 100px';
   } else if (document.location.href.includes('wiki.html')) {
     document.body.style.margin = '90px 0';
+    document.querySelector('.wiki-name-main').style.margin = '20px';
   }
 }
 onResizeWiki();

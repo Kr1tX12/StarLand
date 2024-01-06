@@ -21,7 +21,6 @@ body {
   background-color: var(--bcg-night-color);
   margin:0;
   font-family:'Montserrat' sans-serif;
-  margin-bottom:100px;
   transition:background-color 1s;
   overflow-x: hidden;
 }
@@ -226,7 +225,7 @@ canvas {
   color:white;
   margin:auto;
   margin-left:calc(50vw - 150px);
-  margin-top:250px;
+  margin-top:110px;
 }
 .discord-button:hover {
   background-color:#505ff4;
@@ -582,10 +581,71 @@ a:hover {
   border:1px solid var(--bcg-night4-color);
   transition: all 0.2s;
   transform: perspective(400px) rotate3d(1,1,0,20deg);
+  animation: 0.7s ease-out 0s 1 alternate text-show;
 }
 .sl-logo-top-part:hover {
   width:110px;
   margin-left:calc(50% - 110px / 2);
   margin-top: 5px;
   transform: perspective(400px) rotate3d(0,0,0,8deg);
+}
+
+.server-online {
+  -webkit-text-fill-color: greenyellow;
+}
+
+/*Bottom navbar*/
+
+.bottom-navbar {
+  background-color:var(--bcg-night4-color);
+  margin:0;
+  margin-top:150px;
+  width:100%;
+  height:400px;
+  
+  background: var(--bcg-night4-color);
+  background: linear-gradient(0deg, var(--bcg-night4-color) 0%, var(--bcg-night2-color) 100%);
+  transition: all 1s;
+}
+.bottom-navbar-sl-title {
+  width:70px;
+  display:block;
+  margin:0px auto;
+  padding-top: 10px;
+}
+.bottom-navbar-text {
+  color:var(--text-color);
+  text-align: center;
+  font-family: 'Montserrat';
+  margin:20px;
+  transition: all 1s;
+}
+.bottom-navbar-code {
+  font-family: 'Montserrat';
+  display:block;
+  text-align: center;
+}
+.bottom-navbar-social-network {
+  display:grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  align-items: center;
+  justify-content: center;
+  margin-top:180px;
+}
+.soc-icon {
+  height:50px;
+  filter:invert();
+  margin:auto;
+  transition: all 1s;
+}
+.vk-icon {
+  height:60px;
+}
+.vk-icon:hover {
+  height:55px;
+  transition: all 0.2s;
+}
+.soc-icon:not(.vk-icon):hover {
+  height:45px;
+  transition: all 0.2s;
 }

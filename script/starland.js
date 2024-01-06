@@ -259,3 +259,58 @@ setInterval(() => {
     dy = 0.01;
   }
 },10)
+
+
+
+setInterval(() => {
+  fetch('https://api.mcsrvstat.us/3/n1.minwix.net:25063')
+  .then(response => {
+    if (!response.ok) {
+      throw new Error('Не удалось взять информацию с сервера')
+    }
+    return response.json();
+  })
+  .then(data => {
+    if (data.online) {
+      mainOnline = data.players.online;
+    } else {
+      mainOnline = false;
+    }
+  })
+  .then(() => {
+    fetch('https://api.mcsrvstat.us/3/n1.minwix.net:25010')
+     .then(response => {
+      if (!response.ok) {
+        throw new Error('Не удалось взять информацию с сервера')
+      }
+      return response.json();
+    })
+    .then(data => {
+      if (data.online) {
+        academyOnline = data.players.online
+      } else {
+        academyOnline = false;
+      }
+    })
+    .then(() => {
+      if (!mainOnline && !academyOnline) {
+        online = '<span style="-webkit-text-fill-color: darkred">Сервера оффлайн</span>';
+      } else if (!mainOnline) {
+        online = academyOnline;
+      } else if (!academyOnline) {
+        online = mainOnline;
+      } else {
+        online = 'Онлайн: ' + (mainOnline + academyOnline);
+      }
+      document.querySelector('.server-online').innerHTML = online;
+    })
+    .catch(error => {console.error(error); document.querySelector('.server-online').innerHTML = '<span style="-webkit-text-fill-color: darkred">У вас нет интернета!</span>';});
+  })
+  .catch(error => {console.error(error); document.querySelector('.server-online').innerHTML = '<span style="-webkit-text-fill-color: darkred">У вас нет интернета!</span>';});
+}, 1000)
+
+  
+
+  
+
+  

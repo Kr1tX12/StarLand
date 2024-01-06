@@ -12,6 +12,9 @@ const javaAcademyIp = 'n1.minwix.net:25010';
 const bedrockMainIp = 'n1.minwix.net 25078';
 const javaMainIp = 'n1.minwix.net:25063';
 
+let online = 'Онлайн: Загрузка...'
+let academyOnline = 0;
+let mainOnline = 0;
 //Правила сервера 
 //
 //КАК УСТАНАВЛИВАТЬ НОВЫЕ ПРАВИЛА

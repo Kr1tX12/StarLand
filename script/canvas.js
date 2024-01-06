@@ -1,6 +1,7 @@
+
+
 const canvas = document.querySelector('canvas');
 const c = canvas.getContext('2d');
-
 function resize() {
   if (innerHeight > 750 && innerHeight < 1200) {
     canvas.height = innerHeight;
