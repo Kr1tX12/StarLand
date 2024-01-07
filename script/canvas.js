@@ -59,7 +59,7 @@ function init() {
     circles.push(new Circle(Math.random()*canvas.width,Math.random()*canvas.height + downOffset, (Math.random()*canvas.width/3)+canvas.width/5, `rgba(${Math.random()*150},${Math.random()*150},${(Math.random()*150)+100},0.2)`,true, (Math.random()-0.5)*canvas.width /30, (Math.random()-0.5)*canvas.width /30))
   }
   for (let i = 0; i<innerWidth /50; i++) {
-    circles.push(new Circle(Math.random()*canvas.width,Math.random()*canvas.height, Math.random() *2, 'white', false, (Math.random()-0.5)*canvas.width /100, (Math.random()-0.5)*canvas.width /100,));
+    circles.push(new Circle(Math.random()*canvas.width,Math.random()*canvas.height, Math.random() *2, 'white', false, (Math.random()-0.5)*canvas.width /300, (Math.random()-0.5)*canvas.width /300,));
   }
   for (let i = 0; i<circles.length; i++) {
        circles[i].update();
