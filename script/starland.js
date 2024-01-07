@@ -263,7 +263,30 @@ setInterval(() => {
 
 
 setInterval(() => {
-  fetch('https://api.mcsrvstat.us/3/n1.minwix.net:25063')
+  getDataFromServers();
+}, 1000)
+
+  function setOnline(main, academy) {
+    if (mainOnline === false && academyOnline === false) {
+        online = '<span style="-webkit-text-fill-color: darkred">Сервера оффлайн</span>';
+      } else if (mainOnline === false) {
+        online = `<span style="-webkit-text-fill-color:orange">Онлайн: ${academyOnline}</span>`;
+      } else if (academyOnline === false) {
+        online = `<span style="-webkit-text-fill-color:orange">Онлайн: ${mainOnline}</span>`;
+      } else if (academyOnline + mainOnline < 1){
+        online = `<span style="-webkit-text-fill-color:darkred">Онлайн: ${mainOnline + academyOnline}</span>`;
+      } else if (academyOnline + mainOnline < 5) {
+        online = `<span style="-webkit-text-fill-color:orange">Онлайн: ${mainOnline + academyOnline}</span>`;
+      } else if (academyOnline + mainOnline < 10) { 
+        online = `<span style="-webkit-text-fill-color:yellow">Онлайн: ${mainOnline + academyOnline}</span>`;
+      } else {
+        online = 'Онлайн: ' + (mainOnline + academyOnline);
+      }
+      document.querySelector('.server-online').innerHTML = online;
+  }
+  
+function getDataFromServers() {
+    fetch('https://api.mcsrvstat.us/3/n1.minwix.net:25063')
   .then(response => {
     if (!response.ok) {
       throw new Error('Не удалось взять информацию с сервера')
@@ -293,24 +316,10 @@ setInterval(() => {
       }
     })
     .then(() => {
-      if (!mainOnline && !academyOnline) {
-        online = '<span style="-webkit-text-fill-color: darkred">Сервера оффлайн</span>';
-      } else if (!mainOnline) {
-        online = `<span style="-webkit-text-fill-color:orange">Онлайн: ${academyOnline}</span>`;
-      } else if (!academyOnline) {
-        online = `<span style="-webkit-text-fill-color:orange">Онлайн: ${mainOnline}</span>`;
-      } else {
-        online = 'Онлайн: ' + (mainOnline + academyOnline);
-      }
-      document.querySelector('.server-online').innerHTML = online;
+      setOnline(mainOnline, academyOnline);
     })
     .catch(error => {console.error(error); document.querySelector('.server-online').innerHTML = '<span style="-webkit-text-fill-color: darkred">У вас нет интернета!</span>';});
   })
   .catch(error => {console.error(error); document.querySelector('.server-online').innerHTML = '<span style="-webkit-text-fill-color: darkred">У вас нет интернета!</span>';});
-}, 1000)
-
-  
-
-  
-
-  
+}
+getDataFromServers();

@@ -2,6 +2,7 @@
 
 const canvas = document.querySelector('canvas');
 const c = canvas.getContext('2d');
+
 function resize() {
   if (innerHeight > 750 && innerHeight < 1200) {
     canvas.height = innerHeight;
@@ -18,21 +19,20 @@ addEventListener('resize', () => {
   
 });
 class Circle {
-  constructor(x,y,radius,color) {
+  constructor(x,y,radius,color, blur, dx, dy) {
     this.x = x;
     this.y = y;
     this.radius = radius;
     this.color = color;
-    this.velocity = {
-      x:(Math.random()-0.5)*canvas.width /30,
-      y:(Math.random()-0.5)*canvas.width /30,
-    }
+    this.blur = blur;
+    this.dx = dx;
+    this.dy = dy;
   }
   draw() {
     c.beginPath();
     c.arc(this.x, this.y, this.radius, 0, Math.PI * 2, false);
     c.fillStyle = this.color;
-    c.filter = `blur(${canvas.width/5}px)`
+    if (this.radius > 2) {c.filter = `blur(${canvas.width/5}px)`} else {c.filter = 'none'}
     c.fill();
     c.closePath();
   }
@@ -40,13 +40,13 @@ class Circle {
     this.draw();
     
     if (this.x < 0 || this.x > canvas.width) {
-      this.velocity.x = -this.velocity.x;
+      this.dx = -this.dx;
     }
     if (this.y < 0 || this.y > canvas.height) {
-      this.velocity.y = -this.velocity.y;
+      this.dy = -this.dy;
     }
-    this.x+=this.velocity.y;
-    this.y+=this.velocity.y;
+    this.x+=this.dx;
+    this.y+=this.dy;
     
   }
 }
@@ -54,15 +54,18 @@ let circles;
 function init() {
   circles = [];
   
-  
   for (let i = 0; i<5; i++) {
     const downOffset = canvas.height > 750 ? 750 : 0;
-    circles.push(new Circle(Math.random()*canvas.width,Math.random()*canvas.height + downOffset, (Math.random()*canvas.width/3)+canvas.width/5, `rgba(${Math.random()*150},${Math.random()*150},${(Math.random()*150)+100},0.2)`))
+    circles.push(new Circle(Math.random()*canvas.width,Math.random()*canvas.height + downOffset, (Math.random()*canvas.width/3)+canvas.width/5, `rgba(${Math.random()*150},${Math.random()*150},${(Math.random()*150)+100},0.2)`,true, (Math.random()-0.5)*canvas.width /30, (Math.random()-0.5)*canvas.width /30))
   }
-  
+  for (let i = 0; i<innerWidth /50; i++) {
+    circles.push(new Circle(Math.random()*canvas.width,Math.random()*canvas.height, Math.random() *2, 'white', false, (Math.random()-0.5)*canvas.width /100, (Math.random()-0.5)*canvas.width /100,));
+  }
   for (let i = 0; i<circles.length; i++) {
        circles[i].update();
-     }
+  }
+  
+  
 }
 function animation() {
   
@@ -77,35 +80,3 @@ function animation() {
 animation()
 resize();
 init();
-
-
-
-function drawStar(cx,cy,spikes,outerRadius,innerRadius){
-  var rot=Math.PI/2*3;
-  var x=cx;
-  var y=cy;
-  var step=Math.PI/spikes;
-
-  c.beginPath();
-  c.moveTo(cx,cy-outerRadius)
-  for(i=0;i<spikes;i++){
-    x=cx+Math.cos(rot)*outerRadius;
-    y=cy+Math.sin(rot)*outerRadius;
-    c.lineTo(x,y)
-    rot+=step
-
-    x=cx+Math.cos(rot)*innerRadius;
-    y=cy+Math.sin(rot)*innerRadius;
-    c.lineTo(x,y)
-    rot+=step
-  }
-  c.lineTo(cx,cy-outerRadius);
-  c.closePath();
-  c.lineWidth=5;
-  c.strokeStyle='blue';
-  c.stroke();
-  c.fillStyle='skyblue';
-  c.fill();
-}
-
-drawStar(100,100,5,30,15);

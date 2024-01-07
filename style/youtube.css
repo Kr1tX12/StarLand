@@ -1,6 +1,7 @@
 body {
     overflow-x: hidden;
     margin-top: 90px;
+    height:100vh;
 }
 .youtube-logo2 {
     display:grid;
@@ -26,7 +27,7 @@ body {
     font-size:22px;
     font-weight: 600;
     transition: all 1s;
-    margin-bottom:500px;
+    
   }
   @keyframes text-left-show {
     0% {
@@ -38,3 +39,6 @@ body {
       margin-left:15px;
     }
   }
+.bottom-navbar {
+  margin-top:1500px;
+}

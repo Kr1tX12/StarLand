@@ -25,6 +25,9 @@ body {
   font-size:22px;
   font-weight: 600;
 }
+.wiki-top-part {
+  margin-top: 100px;
+}
 .applications-dev {
   color:white;
   font-family: 'Montserrat';
@@ -33,4 +36,7 @@ body {
 .discord-button {
   margin-top:0;
   margin-bottom:500px;
+}
+.bottom-navbar {
+  margin-top:1500px;
 }

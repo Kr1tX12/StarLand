@@ -1,4 +1,5 @@
-let theme = 'dark';
+let theme = true; //true - dark
+
 let version;
 
 const heightToPcVersion = 800;

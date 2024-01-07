@@ -53,7 +53,7 @@ function toY(y) {
  });
 }
 
-let oldInnerWidth;
+//let oldInnerWidth;
 setInterval(() => {
   updateNavbar();
 }, 100)
@@ -61,7 +61,7 @@ updateNavbar();
 
 
 function updateNavbar() {
-  oldInnerWidth = innerWidth;
+  //oldInnerWidth = innerWidth;
   if (pageYOffset) {
     document.querySelector('.navbar').style.borderBottom = '1px solid var(--bcg-night2-color)'
     document.querySelector('.navbar').style.background = 'var(--bcg-transparent-night-color)'
@@ -143,49 +143,18 @@ function setMobileNavbar() {
 
 
 function changeTheme() {
-  tElem = document.querySelector('.navbar-theme-icon');
-  
-  if (theme === 'dark') {
-    tElem.src = 'images/sun-icon.png';
-    tElem.classList.add('sun-icon');
-    tElem.classList.remove('moon-icon');
-    
-    
-    document.querySelector('.other-close-icon').style.filter = 'invert()';
-    
-    document.querySelectorAll('.other-page-img').forEach(elem => {
-      elem.style.filter = 'none';
-    });
-    document.querySelector('.other-home-icon').style.filter = 'invert()';
-    document.documentElement.style.setProperty('--bcg-night-color', 'rgb(240,240,240)');
-    document.documentElement.style.setProperty('--bcg-night2-color', 'rgb(230,230,230)');
-    document.documentElement.style.setProperty('--bcg-night3-color', 'rgb(220,220,220)');
-    document.documentElement.style.setProperty('--bcg-night4-color', 'rgb(210,210,210)');
-    
-    document.documentElement.style.setProperty('--text-purple-color', '#7A86FF');
-    
-    document.documentElement.style.setProperty('--text-color', 'black');
-    document.documentElement.style.setProperty('--text-gray-color', 'black');
-    document.documentElement.style.setProperty('--text-green-color', '#9BFF5A');
-    document.documentElement.style.setProperty('--bcg-transparent-night-color', 'rgba(240,240,240,0.5');
-    
-    document.documentElement.style.setProperty('--text-purple-color', '#5865f2');
-    document.documentElement.style.setProperty('--text-cyan-color', '#30CFFF');
-    document.documentElement.style.setProperty('--text-yellow-color', '#FFF13F');
-    if (version === 'MOBILE') {
-      document.querySelector('.left-navbar-ham-icon-img').style.filter = 'brightness(0)';
-    }
-    try {
-      document.querySelector('.wiki-back-icon').style.filter = 'none';
-      document.querySelector('.rules-back-icon').style.filter = 'none';
-    } catch (exception) {
-
-    }
-    document.querySelectorAll('.soc-icon').forEach(elem => {
-      elem.style.filter = 'none'
-    })
-    theme = 'light';
+  if (theme) {
+    setTheme(false) //light
   } else {
+    setTheme(true) //dark
+  }
+}
+
+function setTheme(theme2) {
+  tElem = document.querySelector('.navbar-theme-icon');
+  if (theme2) {
+    //dark
+    theme = true;
     tElem.src = 'images/moon-icon.png';
     tElem.classList.add('moon-icon');
     tElem.classList.remove('sun-icon');
@@ -222,11 +191,73 @@ function changeTheme() {
     } catch (exception) {
       
     }
-    theme = 'dark';
-    
     document.querySelectorAll('.soc-icon').forEach(elem => {
       elem.style.filter = 'invert()'
     });
+  } else {
+    //light 
+    theme = false;
+    tElem.src = 'images/sun-icon.png';
+    tElem.classList.add('sun-icon');
+    tElem.classList.remove('moon-icon');
+    
+    document.querySelector('.other-close-icon').style.filter = 'invert()';
+    
+    document.querySelectorAll('.other-page-img').forEach(elem => {
+      elem.style.filter = 'none';
+    });
+    document.querySelector('.other-home-icon').style.filter = 'invert()';
+    document.documentElement.style.setProperty('--bcg-night-color', 'rgb(240,240,240)');
+    document.documentElement.style.setProperty('--bcg-night2-color', 'rgb(230,230,230)');
+    document.documentElement.style.setProperty('--bcg-night3-color', 'rgb(220,220,220)');
+    document.documentElement.style.setProperty('--bcg-night4-color', 'rgb(210,210,210)');
+    
+    document.documentElement.style.setProperty('--text-purple-color', '#7A86FF');
+    
+    document.documentElement.style.setProperty('--text-color', 'black');
+    document.documentElement.style.setProperty('--text-gray-color', 'black');
+    document.documentElement.style.setProperty('--text-green-color', '#9BFF5A');
+    document.documentElement.style.setProperty('--bcg-transparent-night-color', 'rgba(240,240,240,0.5');
+    
+    document.documentElement.style.setProperty('--text-purple-color', '#5865f2');
+    document.documentElement.style.setProperty('--text-cyan-color', '#30CFFF');
+    document.documentElement.style.setProperty('--text-yellow-color', '#FFF13F');
+    if (version === 'MOBILE') {
+      document.querySelector('.left-navbar-ham-icon-img').style.filter = 'brightness(0)';
+    }
+    try {
+      document.querySelector('.wiki-back-icon').style.filter = 'none';
+      document.querySelector('.rules-back-icon').style.filter = 'none';
+    } catch (exception) {
+
+    }
+    document.querySelectorAll('.soc-icon').forEach(elem => {
+      elem.style.filter = 'none'
+    })
   }
+}
+
+addEventListener('scroll', () => {
+  const height = document.documentElement.scrollHeight
+  if (pageYOffset > height - 700) {
+    hideToTopButton();
+  } else if (pageYOffset > 500 ) {
+    showToTopButton();
+  } else {
+    hideToTopButton();
+  }
+})
+document.querySelector('.to-top-button').addEventListener('click', () => {
+  toTop();
+})
+function showToTopButton() {
+  //document.querySelector('.to-top-button').style.animation = 'animation: 0.7s ease-out 1s 1 alternate to-top';
+  document.querySelector('.to-top-button').style.opacity = '1';
+  document.querySelector('.to-top-button').style.bottom = '20px';
   
 }
+function hideToTopButton() {
+  document.querySelector('.to-top-button').style.opacity = '0;'
+  document.querySelector('.to-top-button').style.bottom = '-100px';
+}
+
