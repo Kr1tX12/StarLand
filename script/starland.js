@@ -296,9 +296,9 @@ setInterval(() => {
       if (!mainOnline && !academyOnline) {
         online = '<span style="-webkit-text-fill-color: darkred">Сервера оффлайн</span>';
       } else if (!mainOnline) {
-        online = academyOnline;
+        online = `<span style="-webkit-text-fill-color:orange">${academyOnline}</span>`;
       } else if (!academyOnline) {
-        online = mainOnline;
+        online = `<span style="-webkit-text-fill-color:orange">${mainOnline}</span>`;
       } else {
         online = 'Онлайн: ' + (mainOnline + academyOnline);
       }
