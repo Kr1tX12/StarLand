@@ -68,13 +68,18 @@ function init() {
   
 }
 function animation() {
-  
+  let distance;
+  if (version === 'PC') {
+    distance = 50;
+  } else {
+    distance = 150 ;
+  }    
   setInterval(() => {
      c.clearRect(0,0,canvas.width, canvas.height)
      for (let i = 0; i<circles.length; i++) {
        circles[i].update();
      }
-  },150)
+  },distance);
   
 }
 animation()
