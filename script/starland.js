@@ -323,3 +323,14 @@ function getDataFromServers() {
   .catch(error => {console.error(error); document.querySelector('.server-online').innerHTML = '<span style="-webkit-text-fill-color: darkred">У вас нет интернета!</span>';});
 }
 getDataFromServers();
+getDataFromDiscord();
+
+//взять участников дс с сервера и отправить на сайт
+function getDataFromDiscord() {
+  fetch('https://discord.com/api/v9/invites/puKqkSUb4k?with_counts=true')
+  .then(responce => responce.json())
+  .then(data => {
+    document.querySelector('.ds-stat-num').innerHTML = data.approximate_member_count;
+  })
+  
+}
