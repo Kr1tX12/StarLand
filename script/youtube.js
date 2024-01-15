@@ -10,7 +10,7 @@ function loadVideos() {
   fetch(`https://www.googleapis.com/youtube/v3/videos?part=snippet&part=statistics&part=contentDetails&id=01WAod7bKRE&key=AIzaSyA7hUFsf_PLyolmslOQmkqyVheLlReDR3c`)
   .then(res => res.json())
   .then(data => {
-    if (data.error.code !== 403) {
+    if (!data.error) {
       generateYoutubeAPIVideos(videosIds);
     } else {
       document.querySelector('.youtube-note').innerHTML = '<p class="youtube-noquote-note"><span style="color:darkred">Включена квотонепотребляемая версия</span> Youtube StarLand, так как сегодня люди много сюда заходили за 1 день, и теперь не отображается количество лайков, просмотров и дата выхода видео.</p>'
@@ -21,12 +21,12 @@ function loadVideos() {
 loadVideos();
 
 function generateYoutubeAPIVideos(videosArray) {
-  alert('КВОТА ЕСТЬ!!!')
   for (let i = 0; i<videosArray.length; i++) {
       fetch(`https://www.googleapis.com/youtube/v3/videos?part=snippet&part=statistics&part=contentDetails&id=${videosArray[i]}&key=AIzaSyA7hUFsf_PLyolmslOQmkqyVheLlReDR3c`)
       .then(res => res.json())
       .then(data => {
-         if (data.error.code === 403) {
+         if (!data.error) {
+            //console.log(data)
             const date1 = new Date(data.items[0].snippet.publishedAt);
             const date2 = new Date();
             let daysLag = Math.ceil(Math.abs(date2.getTime() - date1.getTime()) / (1000 * 3600 * 24));
@@ -59,6 +59,14 @@ function generateYoutubeAPIVideos(videosArray) {
                 offset = 'дней'
               }
             }
+            
+            let duration = data.items[0].contentDetails.duration;
+            
+            duration = duration.slice(2);
+            duration = duration.slice(0,-1);
+            duration = duration.replace(/\D/g,':');
+            
+            //console.log(duration)
             document.querySelector('.videos-grid').innerHTML += 
             `
             <div class="video" onclick="
@@ -66,14 +74,15 @@ function generateYoutubeAPIVideos(videosArray) {
             ">
               <div class="video-top-part">
                 <img class="video-thumbnail" src="${data.items[0].snippet.thumbnails.high.url}">
+                
               </div>
               <div class="video-bottom-part">
                 <div class="video-bottom-right-part">
                   <div class="video-bottom-right-top-part">
-                    ${data.items[0].snippet.title}
+                     ${data.items[0].snippet.title}
                   </div>
                   <div class="video-bottom-right-bottom-part">
-                     ${data.items[0].snippet.channelTitle} • ${data.items[0].statistics.viewCount} просмотров • ${daysLag} ${offset} назад
+                     ${data.items[0].snippet.channelTitle} • ${data.items[0].statistics.viewCount} просмотров • ${daysLag} ${offset} назад • ${data.items[0].statistics.likeCount} лайков • ${duration}
                   </div>
                 </div>
               </div>
