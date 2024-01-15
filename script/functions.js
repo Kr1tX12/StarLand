@@ -223,6 +223,7 @@ const theme = {
     document.documentElement.style.setProperty('--bcg-night2-color', '#262626');
     document.documentElement.style.setProperty('--bcg-night3-color', '#303030');
     document.documentElement.style.setProperty('--bcg-night4-color', '#2E2E2E');
+    document.documentElement.style.setProperty('--text-gray2-color', '#D9D9D9');
     
     document.documentElement.style.setProperty('--text-purple-color', 'white');
     
@@ -265,6 +266,7 @@ const theme = {
     document.documentElement.style.setProperty('--bcg-night2-color', 'rgb(230,230,230)');
     document.documentElement.style.setProperty('--bcg-night3-color', 'rgb(220,220,220)');
     document.documentElement.style.setProperty('--bcg-night4-color', 'rgb(210,210,210)');
+    document.documentElement.style.setProperty('--text-gray2-color', 'black');
     
     document.documentElement.style.setProperty('--text-purple-color', '#7A86FF');
     
