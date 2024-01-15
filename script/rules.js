@@ -84,7 +84,7 @@ for (let i = 0; i<rules.length; i++) {
   if (rules[i].sub) {
     html += `
     <div class="rules-content-part rules-content-subpart" onclick="
-      toY(${yPosition+innerHeight*2})
+      to.y(${yPosition+innerHeight*2})
     ">
       <p class="rules-content-part-link rules-content-part-sublink"><span class="${spanClass}">${rules[i].num}</span> ${rules[i].name}</p>
     </div>
@@ -92,7 +92,7 @@ for (let i = 0; i<rules.length; i++) {
   } else {
     html += `
     <div class="${gradClass} rules-content-part" onclick="
-      toY(${yPosition+innerHeight*2})
+      to.y(${yPosition+innerHeight*2})
     ">
       <p class="rules-content-part-link"><img class="rules-content-img" src="${rules[i].img}"> ${rules[i].name}</p>
     </div>

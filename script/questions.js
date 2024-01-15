@@ -38,7 +38,7 @@ for (let i = 0; i<questions.length; i++) {
   
   html += `
     <div class="questions-content-part" onclick="
-      toY(${yPosition + 500})
+      to.y(${yPosition + 500})
     ">
       <p class="questions-content-part-link"> • <span class="questions-content-link-name">${questions[i].name}</span></p>
     </div>

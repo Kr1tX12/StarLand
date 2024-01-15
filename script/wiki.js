@@ -77,7 +77,7 @@ for (let i = 0; i<wiki.length; i++) {
   if (!wiki[i].mainName) {
     html += `
     <div class="wiki-content-part wiki-content-subpart" onclick="
-      toY(${yPosition + 500})
+      to.y(${yPosition + 500})
     ">
       <a class="wiki-content-part-link wiki-content-part-sublink"><span class="${spanClass}">${wiki[i].num}</span> ${wiki[i].name}</a>
     </div>
@@ -85,7 +85,7 @@ for (let i = 0; i<wiki.length; i++) {
   } else {
     html += `
     <div class="${gradClass} wiki-content-part" onclick="
-      toY(${yPosition + 500})
+      to.y(${yPosition + 500})
     ">
       <a class="wiki-content-part-link">${wiki[i].num} ${wiki[i].mainName}</a>
     </div>

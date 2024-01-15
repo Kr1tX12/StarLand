@@ -12,6 +12,7 @@
   --text-green-color:white;
   --text-purple-color:white;
   --text-color:white;
+  --text-gray2-color:#D9D9D9;
   --text-gray-color:#F6F6F6;
   --text-cyan-color:white;
   --text-yellow-color:white;
@@ -421,6 +422,7 @@ canvas {
 
 .other-page-img {
   height:25px;
+  filter:invert();
 }
 .other-buttons {
   display:grid;

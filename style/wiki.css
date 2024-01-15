@@ -3,9 +3,6 @@ body {
   margin-bottom:0;
 }
 .wiki-logo2 {
-  display:grid;
-  grid-template-columns: 40px 1fr;
-  align-items: center;
   margin:10px 20px;
   
   background: -webkit-linear-gradient(#FFFFFF, #4353FF);
@@ -22,8 +19,9 @@ body {
   color:var(--text-color);
   margin-left:15px;
   font-family:'Montserrat';
-  font-size:22px;
-  font-weight: 600;
+  font-size:30px;
+  text-align: center;
+  font-weight: 700;
 }
 .wiki-content {
   margin-left:20px;

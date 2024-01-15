@@ -4,9 +4,6 @@ body {
     height:100vh;
 }
 .youtube-logo2 {
-    display:grid;
-    grid-template-columns: 40px 1fr;
-    align-items: center;
     margin:10px 20px;
     
     background: -webkit-linear-gradient(#FFFFFF, #7FFF8F);
@@ -24,10 +21,10 @@ body {
     color:var(--text-color);
     margin-left:15px;
     font-family:'Montserrat';
-    font-size:22px;
-    font-weight: 600;
+    font-size:30px;
+    font-weight: 700;
     transition: all 1s;
-    
+    text-align: center;
   }
   @keyframes text-left-show {
     0% {
@@ -40,5 +37,63 @@ body {
     }
   }
 .bottom-navbar {
-  margin-top:1500px;
+}
+
+.videos-grid {
+  display:grid;
+  grid-template-columns: 1fr;
+  align-items: center;
+  justify-content: space-between;
+  column-gap: 10px;
+  row-gap: 10px;
+}
+.video {
+  margin-top: 20px;
+}
+.video-thumbnail {
+  width: 100vw;
+  height: calc(100vw * 0.5625);
+  object-fit: cover;
+  border-radius: 10px;
+}
+.video-author-avatar {
+  width:40px;
+  border-radius: 50%;
+}
+.video-bottom-left-part {
+  margin-left: 5px;
+}
+.video-bottom-part {
+  display:grid;
+  grid-template-columns: 1fr;
+  margin-top:5px;
+}
+.video-bottom-right-part {
+  margin:10px;
+  margin-top:0;
+}
+.video-bottom-right-top-part {
+  color:var(--text-color);
+  margin:0;
+  font-family: 'Montserrat';
+  width:100%;
+  margin-bottom: 5px;
+  font-size: 15px;
+  font-weight: 500;
+}
+.video-bottom-right-center-part {
+  color:var(--text-gray2-color);
+  font-size: 14px;
+  font-family: 'Montserrat';
+}
+.video-bottom-right-bottom-part {
+  color:var(--text-gray2-color);
+  font-size: 14px;
+  font-family: 'Montserrat';
+}
+.youtube-noquote-note {
+  color:white;
+  text-align: center;
+  font-family: 'Montserrat';
+  
 }

@@ -1,5 +1,3 @@
-let theme = true; //true - dark
-
 let version;
 
 const heightToPcVersion = 800;
@@ -238,6 +236,39 @@ const wiki = [{
   
   warning:`<button class="discord-button" onclick="window.open('https://discord.com/invite/bc4NDs7CVg')
           "><img class="discord-logo" src="https://assets-global.website-files.com/6257adef93867e50d84d30e2/636e0a6a49cf127bf92de1e2_icon_clyde_blurple_RGB.png"> Наш Дискорд </button>`
+}, {
+  mainName:false,
+  num:1.3,
+  name: 'Администрация',
+  text: `Справа — его ник, а то что в скобках — ник в дискорде<br><br>
+         <b>Создатель</b> — Олад (oladyshec1234)<br><br>
+         <b>Админы:</b><br>
+         <b>1.</b> Dizzi (dizzigut)<br>
+         <b>2.</b> Maffin (f1ne_3)<br>
+         <b>3.</b> Mister Proper (Mr.DemetriuM#5634)<br>
+         <b>4.</b> Zaderav (zaderav)<br><br>
+         <b>Тех-админы</b> (есть доступ к консоли)<br>
+         <b>1.</b> Krit (krit4) (создатель сайта)<br>
+         <b>2.</b> Dizzi (dizzigut)<br><br>
+         <b>Модераторы:</b> </b><br>
+         <b>1.</b> M1zurku (m1zurku)<br>
+         <b>2.</b> RedPush (redpush)<br>
+         <b>3.</b> RealNooB (realnoobi)<br>
+         <b>4.</b> sa-sanya (rammstein_2)<br>
+         <b>5.</b> Rublik (rubl1k7224)<br>
+         <b>6.</b> Амогус (strongamogus)<br>
+         <b>7.</b> Kitayozi (kitayozi)<br>
+         <b>8.</b> Re11ay (re11ay)<br>
+         <b>9.</b> Dectuz (dectuz)<br>
+         <b>10.</b> Daxy (daxy4)<br>
+         <b>11.</b> spideraboba2 (spideraboba2)<br>
+         <b>12.</b> Akar (invainway)<br>
+         <b>13.</b> Elemental (elemental63)<br>
+         <b>14.</b> зонтик (zont1q)<br>
+         <b>15.</b> Mr. Vygas (mr_vygas)<br>
+         <b>16.</b> quitz (quitz3)<br>
+         `,
+  warning:false,
 }, {
   mainName:'Майнкрафт',
   num:2,

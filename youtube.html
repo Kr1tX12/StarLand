@@ -17,81 +17,7 @@
      ">
   </div>
     <div class="other-window">
-      <div class="other-text-div">
-        <div class="other-text">
-          Страницы
-        </div>
-        <div class="other-close-button-div">
-          <button class="other-close-button"onclick="
-            otherWindowClose();
-          ">
-            <img src="images/close-icon.png" class="other-close-icon">
-          </button>
-        </div>
-      </div>
-      <div class="other-buttons">
-        <div class="other-main-page other-button-part" onclick="
-          toHome();
-        ">
-          <div>
-            <img src="images/home-icon.png" class="other-page-img other-home-icon">
-          </div>
-          <div class="other-button-name">
-            Домашняя страница
-          </div>
-        </div>
-        <div class="other-wiki-page other-button-part" onclick="
-          toWiki();
-        ">
-          <div>
-            <img src="images/wiki-icon.png" style="filter:invert()" class="other-page-img">
-          </div>
-          <div class="other-button-name">
-            Википедия сервера
-          </div>
-        </div>
-        <div class="other-rules-page other-button-part" onclick="
-          toRules();
-        ">
-          <div>
-            <img src="images/rules-icon.png" style="filter:invert()" class="other-page-img">
-          </div>
-          <div class="other-button-name">
-            Правила
-          </div>
-        </div>
-        <div class="other-applications-page other-button-part" onclick="
-          toApplications();
-        ">
-          <div>
-            <img src="images/applications-icon.png" style="filter:invert()" class="other-page-img">
-          </div>
-          <div class="other-button-name">
-            Заявка на сервер
-          </div>
-        </div>
-        <div class="other-applications-page other-button-part" onclick="
-        toQuestions();
-      ">
-        <div>
-          <img src="images/question-icon.png" style="filter:invert()" class="other-page-img">
-        </div>
-        <div class="other-button-name">
-          Вопросы
-        </div>
-      </div>
-      <div class="other-applications-page other-button-part" onclick="
-      toYoutube();
-    ">
-      <div>
-        <img src="images/youtube-icon.png" style="filter:invert()" class="other-page-img">
-      </div>
-      <div class="other-button-name" style="color:lightgreen">
-        Видео
-      </div>
-    </div>
-    
-      </div>
+      
     </div>
     <!--Navbar-->
     <div class="navbar">
@@ -120,17 +46,18 @@
   
   <div class="youtube-top-part">
     <div class="youtube-logo2">
-      <div class="youtube-back-button" onclick="
-        toHome();
-      ">
-        <img src="images/back-icon.png" class="youtube-back-icon">
-      </div>
       <div class="youtube-text">
-        StarLand YouTube в Разработке
+        StarLand YouTube
       </div>
     </div>
   </div>
   
+  <div class="youtube-note">
+
+  </div>
+  <div class="videos-grid">
+
+  </div>
   
   <div class="bottom-navbar">
       <img class="bottom-navbar-sl-title" src="images/sl-title.png">
@@ -143,7 +70,11 @@
         <img class="soc-icon" src="images/soc-telegram.png" onclick="window.open('https://t.me/sl1season')">
     </div>
   </div>
+  
+  <script src="script/functions.js"></script>
+  <script src="data/youtube-videos.js"></script>
   <script src="data/data.js"></script>
+  <script src="script/youtube.js"></script>
   <script src="script/events.js"></script>
   
 </body>
