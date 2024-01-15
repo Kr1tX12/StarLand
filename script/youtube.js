@@ -86,7 +86,7 @@ function generateYoutubeAPIVideos(videosArray) {
 }
 function generateNoEmbedAPIVideos(videosArray) {
   for (let i = 0; i<videosArray.length; i++) {
-      fetch(`http://noembed.com/embed?url=https://youtu.be/${videosArray[i]}`)
+      fetch(`https://noembed.com/embed?url=https://youtu.be/${videosArray[i]}`)
       .then(res => res.json())
       .then(data => {
             if (!data.error) {
