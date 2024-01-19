@@ -124,6 +124,7 @@ function generateNoEmbedAPIVideos(videosArray) {
       })
       .catch(err => console.error(err))
   }
+  resize2();
 }
 
 function pushVideosToHtmlYoutubeAPI(sort, videosArray) {
