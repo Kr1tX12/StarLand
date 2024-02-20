@@ -379,4 +379,11 @@ const questions = [{
   num:11,
   text:'Да, сообщения скрыты, чтобы с вашего аккаунта не могли зайти раньше вас, если вы ещё не зарегестрированы',
   warning:''
+},  {
+  name: 'У меня лагает на сервере, что делать?',
+  num:12,
+  text:`Если вы на телефоне (Bedrock Edition):<br> 1. Уменьшите количество прогружаемых чанков на минимум.<br> 2. Установите следующие текстур паки:
+          <button class="discord-button" onclick="window.open('https://mcpedl.com/particle-disabler-pack-1/')
+          "><img class="discord-logo" src="https://static.wikia.nocookie.net/minecraft_ru_gamepedia/images/2/24/Алмазная_руда_JE5_BE5.png/revision/latest?cb=20220417123409">Отключение частиц</button>`,
+  warning:''
 }];
