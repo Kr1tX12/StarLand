@@ -382,8 +382,57 @@ const questions = [{
 },  {
   name: 'У меня лагает на сервере, что делать?',
   num:12,
-  text:`Если вы на телефоне (Bedrock Edition):<br> 1. Уменьшите количество прогружаемых чанков на минимум.<br> 2. Установите следующие текстур паки:
+  text:`Если вы на телефоне (Bedrock Edition):<br> 1. Уменьшите количество прогружаемых чанков на минимум.<br> 2. Установите следующие текстур паки:<br>
           <button class="discord-button" onclick="window.open('https://mcpedl.com/particle-disabler-pack-1/')
-          "><img class="discord-logo" src="https://static.wikia.nocookie.net/minecraft_ru_gamepedia/images/2/24/Алмазная_руда_JE5_BE5.png/revision/latest?cb=20220417123409">Отключение частиц</button>`,
-  warning:''
+          ">Отключение частиц</button>`,
+  warning:'Если вы на Java:<br>
+    Установите моды (Если установить все, FPS повыситься в несколько раз):<br>
+    <button class="discord-button" onclick="window.open('https://modrinth.com/mod/sodium')
+          ">Sodium</button>
+    <button class="discord-button" onclick="window.open('https://modrinth.com/mod/sodium-extra')
+          ">Sodium Extra</button>
+    <button class="discord-button" onclick="window.open('https://modrinth.com/mod/reeses-sodium-options')
+          ">Reeses Sodium Options</button>
+    <button class="discord-button" onclick="window.open('https://modrinth.com/mod/modernfix')
+          ">Modernfix</button>
+    <button class="discord-button" onclick="window.open('https://modrinth.com/mod/lithium')
+          ">Lithium</button>
+    <button class="discord-button" onclick="window.open('https://modrinth.com/mod/starlight')
+          ">StarLight</button>
+    <button class="discord-button" onclick="window.open('https://modrinth.com/mod/lazydfu')
+          ">LazyDFU</button>
+    <button class="discord-button" onclick="window.open('https://modrinth.com/mod/krypton')
+          ">Krypton</button>
+    <button class="discord-button" onclick="window.open('https://modrinth.com/mod/immediatelyfast')
+          ">ImmediatelyFast</button>
+    <button class="discord-button" onclick="window.open('https://modrinth.com/mod/indium')
+          ">Indium</button>
+    <button class="discord-button" onclick="window.open('https://modrinth.com/mod/forcecloseworldloadingscreen')
+          ">ForceCloseWorldLoadingScreen</button>
+    <button class="discord-button" onclick="window.open('https://modrinth.com/mod/ferrite-core')
+          ">FerritCore</button>
+    <button class="discord-button" onclick="window.open('https://modrinth.com/mod/krypton')
+          ">MemoryLeak Fix</button>
+    <button class="discord-button" onclick="window.open('https://modrinth.com/mod/entityculling')
+          ">EntityCulling</button>
+    <button class="discord-button" onclick="window.open('https://modrinth.com/mod/c2me-fabric')
+          ">c2me</button>
+    <button class="discord-button" onclick="window.open('https://modrinth.com/mod/ebe')
+          ">Enchanced Block Enteties</button>
+    <button class="discord-button" onclick="window.open('https://modrinth.com/mod/bobby')
+          ">Bobby</button>
+    <button class="discord-button" onclick="window.open('https://modrinth.com/mod/nvidium')
+          ">Nvidium (нужна видеокарта от Nvidia)</button>
+    <button class="discord-button" onclick="window.open('https://modrinth.com/mod/dynamic-fps')
+          ">Dynamic FPS</button>
+    <button class="discord-button" onclick="window.open('https://modrinth.com/mod/iris')
+          ">Iris</button>
+    <button class="discord-button" onclick="window.open('https://modrinth.com/mod/vmp-fabric')
+          ">Very Many Players</button>
+    <button class="discord-button" onclick="window.open('https://modrinth.com/mod/yacl')
+          ">Yet Another Config Lib</button>
+    <button class="discord-button" onclick="window.open('https://modrinth.com/mod/badoptimizations')
+          ">BadOptimization</button>
+    <button class="discord-button" onclick="window.open('https://modrinth.com/mod/threadtweak')
+          ">ThreadTweak</button>'
 }];
