@@ -385,7 +385,7 @@ const questions = [{
   text:`Если вы на телефоне (Bedrock Edition):<br> 1. Уменьшите количество прогружаемых чанков на минимум.<br> 2. Установите следующие текстур паки:<br>
           <button class="discord-button" onclick="window.open('https://mcpedl.com/particle-disabler-pack-1/')
           ">Отключение частиц</button>`,
-  warning:'Если вы на Java:<br>
+  warning:`Если вы на Java:<br>
     Установите моды (Если установить все, FPS повыситься в несколько раз):<br>
     <button class="discord-button" onclick="window.open('https://modrinth.com/mod/sodium')
           ">Sodium</button>
@@ -434,5 +434,5 @@ const questions = [{
     <button class="discord-button" onclick="window.open('https://modrinth.com/mod/badoptimizations')
           ">BadOptimization</button>
     <button class="discord-button" onclick="window.open('https://modrinth.com/mod/threadtweak')
-          ">ThreadTweak</button>'
+          ">ThreadTweak</button>`
 }];
