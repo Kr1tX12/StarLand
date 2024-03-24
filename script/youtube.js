@@ -237,5 +237,6 @@ function updateVideos() {
       htmlCode += youtubeDATA[i].code;
     }
     document.querySelector('.videos-grid').innerHTML = htmlCode;
+    resize2()
 }
 let youtubeDATAold;
