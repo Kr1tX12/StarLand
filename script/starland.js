@@ -66,8 +66,8 @@ function setPcVersion() {
     document.querySelector('.ip-copy-button').style.width = '200px';
     document.querySelector('.ip-copy-buttons').style.marginLeft = 'calc(50vw - 200px)';
 
-    document.querySelector('.discord-button').style.width = '400px';
-    document.querySelector('.discord-button').style.marginLeft = 'calc(50vw - 200px)'
+    document.querySelector('.discord-button2').style.width = '400px';
+    document.querySelector('.discord-button2').style.marginLeft = 'calc(50vw - 200px)'
 
     document.querySelector('.wiki-rules-buttons-div').style.gridTemplateColumns = '200px 200px';
     document.querySelector('.wiki-rules-buttons-div').style.marginLeft = 'calc(50vw - 200px)';
