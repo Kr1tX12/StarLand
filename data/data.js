@@ -4,16 +4,8 @@ const heightToPcVersion = 800;
 const widthToPcVersion = 970;
 
 //Айпи серверов академии
-const bedrockAcademyIp = 'n1.minwix.net 25011';
-const javaAcademyIp = 'n1.minwix.net:25010';
-
-//Айпи серверов основы
-const bedrockMainIp = 'n1.minwix.net 25078';
-const javaMainIp = 'n1.minwix.net:25063';
-
+const serverIP = 'starland.lol';
 let online = 'Онлайн: Загрузка...'
-let academyOnline = 0;
-let mainOnline = 0;
 //Правила сервера 
 //
 //КАК УСТАНАВЛИВАТЬ НОВЫЕ ПРАВИЛА
@@ -234,7 +226,7 @@ const wiki = [{
   name:'Про дискорд',
   text:'Почти вся основная информация сервера есть в <u>дискорде</u>: чат майнкрафта, новости, заявки, жалобы, тех-поддержка и т.д.<br><br>В чате майнкрафта вы можете почитать чат майнкрафта или отправить сообщение тем, кто сейчас играет на сервере',
   
-  warning:`<button class="discord-button" onclick="window.open('https://discord.com/invite/bc4NDs7CVg')
+  warning:`<button class="discord-button" onclick="window.open('https://discord.com/invite/starland01')
           "><img class="discord-logo" src="https://assets-global.website-files.com/6257adef93867e50d84d30e2/636e0a6a49cf127bf92de1e2_icon_clyde_blurple_RGB.png"> Наш Дискорд </button>`
 }, {
   mainName:false,
@@ -243,30 +235,44 @@ const wiki = [{
   text: `Справа — его ник, а то что в скобках — ник в дискорде<br><br>
          <b>Создатель</b> — Олад (oladyshec1234)<br><br>
          <b>Админы:</b><br>
-         <b>1.</b> Dizzi (dizzigut)<br>
-         <b>2.</b> Maffin (f1ne_3)<br>
-         <b>3.</b> Mister Proper (Mr.DemetriuM#5634)<br>
-         <b>4.</b> Zaderav (zaderav)<br><br>
+         <b>1.</b> Mister Proper (Mr.DemetriuM#5634)<br>
+         <b>2.</b> зонтик (zont1q)<br>
+         <b>3.</b> Мистер Пропер (mr.demetrium)<br>
          <b>Тех-админы</b> (есть доступ к консоли)<br>
          <b>1.</b> Krit (krit4) (создатель сайта)<br>
-         <b>2.</b> Dizzi (dizzigut)<br><br>
-         <b>Модераторы:</b> </b><br>
-         <b>1.</b> M1zurku (m1zurku)<br>
          <b>2.</b> RedPush (redpush)<br>
-         <b>3.</b> RealNooB (realnoobi)<br>
-         <b>4.</b> sa-sanya (rammstein_2)<br>
-         <b>5.</b> Rublik (rubl1k7224)<br>
-         <b>6.</b> Амогус (strongamogus)<br>
-         <b>7.</b> Kitayozi (kitayozi)<br>
-         <b>8.</b> Re11ay (re11ay)<br>
-         <b>9.</b> Dectuz (dectuz)<br>
-         <b>10.</b> Daxy (daxy4)<br>
-         <b>11.</b> spideraboba2 (spideraboba2)<br>
-         <b>12.</b> Akar (invainway)<br>
-         <b>13.</b> Elemental (elemental63)<br>
-         <b>14.</b> зонтик (zont1q)<br>
-         <b>15.</b> Mr. Vygas (mr_vygas)<br>
-         <b>16.</b> quitz (quitz3)<br>
+         <b>Модераторы:</b> </b><br>
+         <b>1.</b> RealNooB (realnoobi)<br>
+         <b>2.</b> sa-sanya (rammstein_2)<br>
+         <b>3.</b> Rublik (rubl1k7224)<br>
+         <b>4.</b> Амогус (strongamogus)<br>
+         <b>5.</b> Kitayozi (kitayozi)<br>
+         <b>6.</b> Re11ay (re11ay)<br>
+         <b>7.</b> Dectuz (dectuz)<br>
+         <b>8.</b> Daxy (daxy4)<br>
+         <b>9.</b> spideraboba2 (spideraboba2)<br>
+         <b>10.</b> Akar (invainway)<br>
+         <b>11.</b> зонтик (zont1q)<br>
+         <b>12.</b> Vygas (mr_vygas)<br>
+         <b>13.</b> quitz (quitz3)<br>
+         <b>14.</b> Neskin (_neskin_)<br>
+         <b>15.</b> Afontiy (slavikpro2011_)<br>
+         <b>16.</b> MeganG (megange)<br>
+         <b>17.</b> KoTNK (KoTNK1883)<br>
+         <b>18.</b> Arbuzovich (kirill_arbuzovich)<br>
+         <b>19.</b> Zhozhik (zhozhik8209)<br>
+         <b>20.</b> LeMecene (berilium)<br>
+         <b>21.</b> Daxy (daxy4)<br>
+         <b>22.</b> Zaderav (zaderav)<br>
+         <b>23.</b> staliker (nevil4120)<br>
+         <b>24.</b> Меламори (melamori1336)<br>
+         <b>25.</b> Liqueur (liqueur0)<br>
+         <b>26.</b> Akar (invainway)<br>
+         <b>27.</b> Lexus (lexus_xdt)<br>
+         <b>28.</b> Eslide (eslide)<br>
+         <b>29.</b> Fawn (fawnwalk9482183)<br>
+         <b>30.</b> Ksen1z (ksen1z.)<br>
+         <b>31.</b> Муфи (xxxmyfi)<br>
          `,
   warning:false,
 }, {
@@ -276,13 +282,13 @@ const wiki = [{
   mainName:false,
   num:2.1,
   name:'Сервер',
-  text:'У нас есть 2 сервера — <b>Основной и Академия</b>. В общем хост стоит около 5000 рублей. В них очень много плагинов, а ядро — <i>Purpur</i>, которое создает много возможностей без больших лагов',
+  text:'У нас есть 2 сервера — <b>Основной и Анархия</b>. В общем хост стоит около 5000 рублей. В них очень много плагинов, а ядро — <i>Folia</i>, которое создает много возможностей без больших лагов',
   warning:false,
 }, {
   mainName:false,
   num:2.2,
   name:'Чат',
-  text:'На сервере стоит плагин <i>Chatty</i>, который разделяет чат на локальный и глобальный.<br><br><b>Глобальный чат</b> — сообщения, которые видит весь сервер<br><br><b>Локальный чат</b> — Сообщения, которые видят только те игроки, которые находяться в радиусе 50 блоков от игрока, который отправил данное сообщение.',
+  text:'На сервере стоит плагин, который разделяет чат на локальный и глобальный.<br><br><b>Глобальный чат</b> — сообщения, которые видит весь сервер<br><br><b>Локальный чат</b> — Сообщения, которые видят только те игроки, которые находяться в радиусе 50 блоков от игрока, который отправил данное сообщение.',
   warning:'Чтобы отправить <u>глобальное сообщение</u>, перед сообщением напишите восклицательный знак. Например: <i>"!Привет всем"</i>.<br><br>Чтобы отправить <u>локальное сообщение</u>, ничего не пишите перед сообщением, например: <i>"Привет всем"</i>.<br><br>Также можно отправлять сообщения в соотвествующий чат, написав команду <u>"/global"</u> или <u>"/local"</u>. Последующие написанные вами сообщения будут отправлены в соответствующий чат',
 }, {
   mainName:'Майнкрафт: Плагины и Моды',
@@ -299,22 +305,20 @@ const wiki = [{
   num:3.2,
   name:'Онлайн Карта',
   text:'На сервере стоит плагин <i>Dynmap</i>, который позволяет смотреть карту всего Майнкрафт мира в реальном времени на сайте. Сами сайты по ссылкам внизу (Академия и Основа)',
-  warning:`<button class="dynmap-button" onclick="window.open('http://n1.minwix.net:25068/')
-          "><img class="dynmap-logo" src="https://symbl-world.akamaized.net/i/webp/9a/7011c67ec6bef4ee0078350e970eb4.webp"> Карта Основы</button><br><button class="dynmap-button" style="margin-top:10px" onclick="window.open('http://n1.minwix.net:25013/')
-          "><img class="dynmap-logo" src="https://symbl-world.akamaized.net/i/webp/9a/7011c67ec6bef4ee0078350e970eb4.webp"> Карта Академии</button>`,
+  warning:`<button class="dynmap-button" onclick="window.open('http://map.starland.lol')
+          "><img class="dynmap-logo" src="https://symbl-world.akamaized.net/i/webp/9a/7011c67ec6bef4ee0078350e970eb4.webp"> map.starland.lol</button>`
 }, {
   mainName:false,
   num:3.3,
   name:'Остальные плагины',
   text:'<b>Armor Stand Editor</b> — Плагин, с которым вы можете редактировать стойки для брони. Чтобы его использовать нажмите палкой на шифте на стойку для брони, а дальше можно самому разобраться.<br><br><b>Brewery</b> — плагин, с которым можно варить алкоголь. Документация снизу.',
-  warning:`<button class="discord-button" onclick="window.open('https://github.com/DieReicheErethons/Brewery/wiki/Homepage')
-          "><img class="voice-logo" src="https://cdn-icons-png.flaticon.com/512/1851/1851105.png"> Brewery </button>`,
+  warning:`<button class="discord-button" onclick="window.open('https://github.com/DieReicheErethons/Brewery/wiki/Homepage')"><img class="voice-logo" src="https://cdn-icons-png.flaticon.com/512/1851/1851105.png"> Brewery </button>`,
 }];
 
 const questions = [{
   name:'Как попасть на сервер?',
   num: 1,
-  text: `<b>1.</b> Зайдите в наш <a class="s" href="https://discord.com/invite/bc4NDs7CVg">дискорд</a><br><br>
+  text: `<b>1.</b> Зайдите в наш <a class="s" href="https://discord.com/invite/starland01">дискорд</a><br><br>
   <b>2.</b>  Отправьте заявку<br><br>
   <b>3.</b> Напишите свой майнкрафт ник в канал <u>"Ники Игроков"</u> и ждите когда вам напишет <b>бот SL</b><br><br>
   <b>4.</b> <u><a onclick="
@@ -337,8 +341,8 @@ const questions = [{
 }, {
   name:'Когда будет следующий сезон?',
   num:3,
-  text:'Сейчас на сервере <b>1 сезон</b>, который начался <i>10 июля 2023 года</i>, в <i>марте 2024 года</i> сезон закроется и начнётся межсезонье, а новый сезон будет в <i>конце мая 2024 года</i>',
-  warning:'1 сезон будет длиться <i>8 месяцев</i>'
+  text:'Сейчас на сервере <b>межсезонье</b>, которое началось <i>10 марта 2024 года</i>, а новый сезон будет в <i>конце мая 2024 года</i>',
+  warning:'2 сезон будет длиться <i>8-12 месяцев</i>'
 }, {
   name:'Какое будет межсезонье?',
   num:4,

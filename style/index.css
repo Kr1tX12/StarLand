@@ -225,8 +225,24 @@ canvas {
   font-weight:600;
   color:white;
   margin:auto;
-  margin-left:calc(50vw - 150px);
-  margin-top:110px;
+  display:block;
+  margin-left:0;
+  margin-top:20px;
+}
+.discord-button2 {
+  background-color:#5865f2;
+  padding:10px 30px;
+  width:300px;
+  text-align:center;
+  font-family: 'Montserrat';
+  border-radius: 30px;
+  border:1px solid #505ff4;
+  font-size:17px;
+  font-weight:600;
+  color:white;
+  display:block;
+  margin:auto;
+  margin-top:140px;
 }
 .discord-button:hover {
   background-color:#505ff4;
@@ -458,25 +474,13 @@ canvas {
   font-weight: 600;
   font-size: 20px;
 }
-.server-select {
-  transition:all 1s;
-  background:none;
-  border:none;
-  color:var(--text-color);
-  text-align: right;
-  font-weight: 500;
-  font-family: 'Montserrat';
-}
-.server-select:hover {
-  outline:none;
-}
-.java-ip-copy-button,
-.bedrock-ip-copy-button {
+
+.ip-copy-button {
   transition:all 1s;
   border:none;
   padding:16px 0;
   border-radius:50px;
-  width:130px;
+  width:200px;
   margin-top:20px;
   color:var(--text-color);
   font-family: 'Montserrat';
@@ -484,17 +488,17 @@ canvas {
   font-weight: 600;
   background: var(--bcg-night2-color);
   transition: all 0.2s, background 1s;
-  
-}
-.java-ip-copy-button {
   border:1px solid #4ACE6D;
 }
-.bedrock-ip-copy-button {
-  border:1px solid #DC9B2D;
-}
-
 .ip-copy-buttons {
-  margin-left:calc(50vw - 130px);
+  margin-left:calc((100% - 200px) / 2);
+}
+.standart-port {
+  transition:all 1s;
+  font-family: 'Montserrat';
+  color:var(--text-color);
+  text-align:center;
+  font-weight: 400;
 }
 
 /*StarLand Gallery Part*/

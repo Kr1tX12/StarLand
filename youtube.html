@@ -1,45 +1,28 @@
 <!DOCTYPE html>
-
 <html>
-
 <head>
-
   <link rel="icon" type="image/x-icon" href="images/favicon.ico">
-
   <link rel="stylesheet" href="style/index.css">
-
   <link rel="stylesheet" href="style/youtube.css">
-
   <meta charset="UTF-8">
-
   <meta name="viewport" content="width=device-width, initial-scale=1 user-scalable=no">
-
   <title>StarLand Вики</title>
-
 </head>
-
 <body>
-
+  <div class="loading-window">
+      Загрузка... <span class="loading-videos-progress1">0</span>/<span class="loading-videos-progress2">?</span>
+    </div>
   <div class="to-top-button">
-
       <img class="to-top-img" src="images/to-top.png">
-
     </div>
-
   <div class="window-gray" onclick="
-
        otherWindowClose();
-
      ">
-
   </div>
-
     <div class="other-window">
-
       
-
     </div>
-
+    
     <!--Navbar-->
 
     <div class="navbar">
@@ -112,10 +95,26 @@
 
   </div>
 
-  <div class="youtube-note2">
+  <div class="youtube-sort">
+    <div class="youtube-sort-name">
+      
+    </div>
+    <div class="youtube-sort">
+      <div class="youtube-sort-choose">
+        <select class="youtube-sort-choose-select">
+          <option value="actual">Актуальное</option>
+          <option value="new">Новое</option>
+          <option value="view">Просматриваемое</option>
+          <option value="like">Залайканное</option>
+          <option value="during">Длинное</option>
+        </select>
 
-    Сортировка видео появится позже
-
+      </div>
+        <input type="checkbox" class="reverse-select" id="reverse-select">
+        <label class="reverse-select-label" for="reverse-select">Наоборот</label><br>
+        <input checked type="checkbox" class="checked-videos-select" id="checked-videos-select">
+        <label class="checked-videos-select-label"for="checked-videos-select">Только проверенные видео</label>
+    </div>
   </div>
 
   <div class="videos-grid">

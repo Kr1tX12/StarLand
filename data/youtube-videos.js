@@ -2,6 +2,7 @@ let videos = [];
 
 // id = lineNum - firstLinkLineNum (5)
 const videosLinks = [
+  'https://youtu.be/KH7wORgEOSg?si=GQ98OqRJsqNAv7yY',
   'https://youtu.be/01WAod7bKRE?si=lXplolvoSH8qgnAU', //МНОГО ВОЗДУХА ЧТОБЫ БЫЛО ЛЕГЧЕ ПИСАТЬ
   'https://youtu.be/hfUUItbf7DI?si=1Ac9wedSvP-dL_if',
   'https://youtu.be/S3_UjWwr-78?si=cBZBuAkH40qDRdRf',
@@ -293,3 +294,30 @@ const videosLinks = [
   'https://youtu.be/04E7VcKhU3o?si=To-VIhIZhPZ2RtbS',
   'https://youtu.be/KH7wORgEOSg?si=MNZMmLkDXvvGZKgs',
 ];
+const checkedVideosLinks = [
+  'https://youtu.be/X1im4lk6XjU?si=-4Pn2PgJExTRgGZO', //ВОЗДУХ ЧТОБЫ ЛЕГЧЕ ПИСАТЬ
+  'https://youtu.be/KH7wORgEOSg?si=GQ98OqRJsqNAv7yY',
+  'https://youtu.be/04E7VcKhU3o?si=yV7vcpmsis97bs7x',
+  'https://youtu.be/S3_UjWwr-78?si=FR-OgmOKf4HLFagV',
+  'https://youtu.be/01WAod7bKRE?si=-krZv9yBsXUIqISQ',
+  'https://youtu.be/hfUUItbf7DI?si=hKUlOrbG6Gn9x7fL',
+  'https://youtu.be/lYXmcGWUsV8?si=MLyvveG1z1uqVle5',
+  'https://youtu.be/qZDWyHlYIFs?si=-zZZJ5SWl8Vcey-F',
+  'https://youtu.be/k7EFIIcpT4g?si=0raNTSJplRUrCpg4',
+  'https://youtu.be/3t1XUpBekdE?si=OiHmQB0I7jtx7Beg',
+  'https://youtu.be/RvU2MNtZD5Y?si=9k7DuHP0fRMQFwxb',
+  'https://youtu.be/iNVHOwYIPQ0?si=czoa-3kufx0IO0-r',
+  'https://youtu.be/e_yYBddvXnw?si=3gvlqmbPSxC30c8P',
+  'https://youtu.be/w1qPPS8j2_w?si=7bwtIiKf8yxm4Ih1',
+  'https://youtu.be/ubWYHXl9Rqw?si=q1Na8Jd_vjVXCV9E',
+  'https://youtu.be/yKu05IKl1Dk?si=-0YHIRJmUAjRprgH',
+  'https://youtu.be/YhAJi1pOCAQ?si=c5fRFSeOFQLo8g4b',
+  'https://youtu.be/TX1aLmIXh2w?si=jL2OSHkTPo4cqA2P',
+  'https://youtu.be/3vc6riq1SMg?si=AjJmk51-r97XMp4m',
+  'https://youtu.be/FR8DkBriYHg?si=RqZaSmbZRS_hbWnR',
+  'https://youtu.be/CtjpQ34imhc?si=dy4TJLtqqSmjRHgH',
+  'https://youtu.be/RpGW4514G-c?si=b2N5F1lHVKalgDmC',
+  'https://youtu.be/thwYbQZfFGk?si=7GojsS2E2Lic0Vzf',
+  'https://youtu.be/spwMastbVZ0?si=cfFSXUNK6PiO2N0h',
+  
+]

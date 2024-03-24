@@ -225,3 +225,50 @@ body {
   
 
 }
+.loading-window {
+  position:fixed;
+  width:200px;
+  top:65px;
+  padding:10px;
+  left:calc(50% - 100px);
+  color:white;
+  text-align: center;
+  font-family: 'Montserrat';
+  background-color:var(--bcg-night4-color);
+  border-radius: 10px;
+  font-weight: 600;
+  opacity:0;
+  transition:all 0.5s;
+}
+.youtube-sort-choose-select {
+  background-color:transparent;
+  color:var(--text-color);
+  font-family: 'Montserrat';
+  font-weight: 600;
+  border:none;
+  transition: all 0.3s;
+  outline:1px solid var(--text-color);
+  padding:2px 5px;
+  border-radius:10px;
+  display:block;
+  margin:auto;
+}
+
+.youtube-sort-choose-select:hover {
+  
+}
+.youtube-sort {
+  display:block;
+  margin:auto;
+  width:300px;
+}
+.reverse-select-label,
+.checked-videos-select-label {
+  color:var(--text-color);
+  font-family: 'Montserrat';
+  font-weight: 600;
+  vertical-align: 2px;
+}
+.youtube-sort-choose {
+  margin-bottom:10px;
+}

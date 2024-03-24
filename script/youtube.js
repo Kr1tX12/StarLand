@@ -1,10 +1,24 @@
+const reverseSelect = document.querySelector('.reverse-select');
+const sortSelect = document.querySelector('.youtube-sort-choose-select');
+const checkedVideosSelect = document.querySelector('.checked-videos-select')
+let checkedVideos = true;
+let choosenSort = sortSelect.value;
+const loadingWindow = document.querySelector('.loading-window')
+let loadingProgress = 0;
+let reversed = false;
 let dataArray = [];
 function loadVideos() {
+  loadingProgress = 0;
   let videosIds = [];
-  for (let i = 0; i<videosLinks.length; i++) {
-    videosIds.push(youtubeLinkToId(videosLinks[i]));
+  if (checkedVideos) {
+    for (let i = 0; i<checkedVideosLinks.length; i++) {
+      videosIds.push(youtubeLinkToId(checkedVideosLinks[i]));
+    }
+  } else {
+    for (let i = 0; i<videosLinks.length; i++) {
+      videosIds.push(youtubeLinkToId(videosLinks[i]));
+    }
   }
-      
   document.querySelector('.videos-grid').innerHTML = '';
   
   fetch(`https://www.googleapis.com/youtube/v3/videos?part=snippet&part=statistics&part=contentDetails&id=01WAod7bKRE&key=AIzaSyA7hUFsf_PLyolmslOQmkqyVheLlReDR3c`)
@@ -13,23 +27,20 @@ function loadVideos() {
     if (!data.error) {
       generateYoutubeAPIVideos(videosIds);
     } else {
-      document.querySelector('.youtube-note').innerHTML = '<p class="youtube-noquote-note"><span style="color:darkred">Включена квотонепотребляемая версия</span> Youtube StarLand, так как сегодня люди много сюда заходили за 1 день, и теперь не отображается количество лайков, просмотров и дата выхода видео.</p>'
+      document.querySelector('.youtube-sort-choose').style.display = 'none'
+      document.querySelector('.youtube-note').innerHTML = '<p class="youtube-noquote-note"><span style="color:darkred">Включена квотонепотребляемая версия</span> Youtube StarLand, так как сегодня люди много сюда заходили за 1 день, и теперь не отображается статистика и сортировка видео.</p>'
       generateNoEmbedAPIVideos(videosIds);
     }
   })
 }
 loadVideos();
 
-function generateYoutubeAPIVideos(videosArray) {
-  for (let i = 0; i<videosArray.length; i++) {
-      fetch(`https://www.googleapis.com/youtube/v3/videos?part=snippet&part=statistics&part=contentDetails&id=${videosArray[i]}&key=AIzaSyA7hUFsf_PLyolmslOQmkqyVheLlReDR3c`)
-      .then(res => res.json())
-      .then(data => {
-         if (!data.error) {
-            //console.log(data)
+function getVideoCode(data) {
+            console.log(data)
             const date1 = new Date(data.items[0].snippet.publishedAt);
             const date2 = new Date();
             let daysLag = Math.ceil(Math.abs(date2.getTime() - date1.getTime()) / (1000 * 3600 * 24));
+            const daysLagSave = daysLag;
             let offset = 'дней';
             
             if (daysLag > 365) {
@@ -67,8 +78,14 @@ function generateYoutubeAPIVideos(videosArray) {
             duration = duration.replace(/\D/g,':');
             
             //console.log(duration)
-            document.querySelector('.videos-grid').innerHTML += 
-            `
+            const html = 
+            {
+              likes: data.items[0].statistics.likeCount,
+              date: daysLagSave,
+              views: data.items[0].statistics.viewCount,
+              duration: duration,
+              actual: (data.items[0].statistics.likeCount + data.items[0].statistics.viewCount / 10) / (daysLagSave / 10),
+              code:             `
             <div class="video" onclick="
               window.open('https://youtu.be/' + '${data.items[0].id}');
             ">
@@ -82,12 +99,37 @@ function generateYoutubeAPIVideos(videosArray) {
                      ${data.items[0].snippet.title}
                   </div>
                   <div class="video-bottom-right-bottom-part">
-                     ${data.items[0].snippet.channelTitle} • ${data.items[0].statistics.viewCount} просмотров • ${daysLag} ${offset} назад • ${data.items[0].statistics.likeCount} лайков • ${duration}
+                     ${data.items[0].snippet.channelTitle} • ${data.items[0].statistics.viewCount} просмотров • ${daysLag} ${offset} назад • ${data.items[0].statistics.likeCount} лайков • ${duration} • Актуальность: ${Math.round((data.items[0].statistics.likeCount + data.items[0].statistics.viewCount / 10) / (daysLagSave / 10))}
                   </div>
                 </div>
               </div>
             </div>
             `
+            }
+
+            return html;
+}
+let youtubeDATA = [];
+function generateYoutubeAPIVideos(videosArray) {
+  document.querySelector('.loading-videos-progress2').innerHTML = videosArray.length;
+  for (let i = 0; i<videosArray.length; i++) {
+      fetch(`https://www.googleapis.com/youtube/v3/videos?part=snippet&part=statistics&part=contentDetails&id=${videosArray[i]}&key=AIzaSyA7hUFsf_PLyolmslOQmkqyVheLlReDR3c`)
+      .then(res => res.json())
+      .then(data => {
+         if (!data.error) {
+            if (checkedVideos && i > checkedVideosLinks.length) {
+              youtubeDATA = [];
+              return;
+            }
+            loadingProgress++;
+            const html = getVideoCode(data);
+            youtubeDATA.push(html)
+            loadingWindow.style.opacity = 1;
+            document.querySelector('.loading-videos-progress1').innerHTML = loadingProgress;
+            setTimeout(() => {
+              loadingWindow.style.opacity = 0;
+            }, 500);
+            updateVideos();
           }
       })
       .catch(err => console.error(err))
@@ -127,18 +169,7 @@ function generateNoEmbedAPIVideos(videosArray) {
   resize2();
 }
 
-function pushVideosToHtmlYoutubeAPI(sort, videosArray) {
-  if (sort === 'likes') {
-    
-  } else if (sort === 'views') {
-    
-  } else if (sort === 'date') {
-    
-  }
-}
-
 addEventListener('resize', () => resize2())
-
 function resize2() {
   const videosGrid = document.querySelector('.videos-grid');
   const videoThumbnail = document.querySelectorAll('.video-thumbnail');
@@ -174,23 +205,37 @@ function resize2() {
 }
 resize2()
 
-
-function bubbleSort(arr) {
-    let i, j;
-    let len = arr.length;
-    let isSwapped = false;
-    for (i = 0; i < len; i++) {
-        isSwapped = false;
-        for (j = 0; j < (len - i - 1); j++) {
-            if (arr[j].items[0].statistics.viewCount > arr[j + 1].items[0].statistics.viewCount) {
-                let temp = arr[j].items[0].statistics.viewCount
-                arr[j].items[0].statistics.viewCount = arr[j + 1].items[0].statistics.viewCount;
-                arr[j + 1].items[0].statistics.viewCount = temp;
-                isSwapped = true;
-            }
-        }
-        if (!isSwapped) {
-            break;
-        }
+sortSelect.addEventListener('change', () => {
+  choosenSort = sortSelect.value;
+  updateVideos();
+})
+reverseSelect.addEventListener('change', () => {
+  reversed = reverseSelect.checked;
+  updateVideos();
+});
+checkedVideosSelect.addEventListener('change', () => {
+  checkedVideos = checkedVideosSelect.checked;
+  loadVideos();
+});
+function updateVideos() {
+  if (choosenSort === 'view') {
+    youtubeDATA.sort((a, b) => b.views - a.views);
+  } else if (choosenSort === 'like') {
+    youtubeDATA.sort((a, b) => b.likes - a.likes);
+  } else if (choosenSort === 'new') {
+    youtubeDATA.sort((a, b) => a.date - b.date);
+  } else if (choosenSort === 'during') {
+    youtubeDATA.sort((a, b) => b.duration.replace(/\D/g, '') - a.duration.replace(/\D/g, ''));
+  } else if (choosenSort === 'actual') {
+    youtubeDATA.sort((a, b) => b.actual - a.actual);
+  }
+  if (reversed) {
+    youtubeDATA.reverse();
+  }
+    let htmlCode = '';
+    for (i = 0; i < youtubeDATA.length; i++) {
+      htmlCode += youtubeDATA[i].code;
     }
+    document.querySelector('.videos-grid').innerHTML = htmlCode;
 }
+let youtubeDATAold;

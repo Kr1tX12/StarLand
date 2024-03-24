@@ -1,5 +1,3 @@
-let nowBedrockIp = bedrockAcademyIp;
-let nowJavaIp = javaAcademyIp;
 
 
 //обновляет сайт каждые 100 миллисекунд
@@ -65,8 +63,7 @@ function updateStarland() {
 function setPcVersion() {
   document.querySelector('.copy-ip-text').style.fontSize = '36px';
 
-    document.querySelector('.bedrock-ip-copy-button').style.width = '200px';
-    document.querySelector('.java-ip-copy-button').style.width = '200px';
+    document.querySelector('.ip-copy-button').style.width = '200px';
     document.querySelector('.ip-copy-buttons').style.marginLeft = 'calc(50vw - 200px)';
 
     document.querySelector('.discord-button').style.width = '400px';
@@ -100,8 +97,8 @@ function setPcVersion() {
 
 //устанавливает мобильную версию сайта
 function setMobileVersion() {
-    document.querySelector('.discord-button').style.width = '300px';
-    document.querySelector('.discord-button').style.marginLeft = 'calc(50vw - 150px)'
+    document.querySelector('.discord-button2').style.width = '300px';
+    document.querySelector('.discord-button2').style.marginLeft = 'calc(50vw - 150px)'
 
     document.querySelector('.wiki-rules-buttons-div').style.gridTemplateColumns = '150px 150px';
     document.querySelector('.wiki-rules-buttons-div').style.marginLeft = 'calc(50vw - 150px)';
@@ -129,40 +126,15 @@ function setMobileVersion() {
 }
 
 //Добавить текст "Готово" на кнопку бедрока на 2с. при копировании
-document.querySelector('.bedrock-ip-copy-button').addEventListener('click', function(){
-  copyText(nowBedrockIp);
-  this.innerHTML = 'Готово!';
-  this.style.color = '#DC9B2D';
-  setTimeout(() => {
-    this.style.color = 'white';
-    this.innerHTML = 'Bedrock';
-  },2000)
-});
-
-
-//Добавить текст "Готово" на кнопку джавы на 2с. при копировании
-document.querySelector('.java-ip-copy-button').addEventListener('click', function(){
-  copyText(nowJavaIp);
+document.querySelector('.ip-copy-button').addEventListener('click', function(){
+  copyText(serverIP);
   this.innerHTML = 'Готово!';
   this.style.color = '#4ACE6D';
   setTimeout(() => {
     this.style.color = 'white';
-    this.innerHTML = 'Java';
+    this.innerHTML = 'starland.lol';
   },2000)
 });
-  
-  
-//Поменять скопированный айпи при изменении выбора Основы или Академии
-document.querySelector('.server-select').addEventListener('change', function(){  
-  if (this.value === 'main') {
-    nowBedrockIp = bedrockMainIp;
-    nowJavaIp = javaMainIp;
-  } else if (this.value === 'academy') {
-    nowBedrockIp = bedrockAcademyIp;
-    nowJavaIp = javaAcademyIp;
-  }
-});
-
 
 //функция чтобы скопировать любой текст
 function copyText(text) {
@@ -266,27 +238,23 @@ setInterval(() => {
   getDataFromServers();
 }, 1000)
 
-  function setOnline(main, academy) {
-    if (mainOnline === false && academyOnline === false) {
-        online = '<span style="-webkit-text-fill-color: darkred">Сервера оффлайн</span>';
-      } else if (mainOnline === false) {
-        online = `<span style="-webkit-text-fill-color:orange">Онлайн: ${academyOnline}</span>`;
-      } else if (academyOnline === false) {
-        online = `<span style="-webkit-text-fill-color:orange">Онлайн: ${mainOnline}</span>`;
-      } else if (academyOnline + mainOnline < 1){
-        online = `<span style="-webkit-text-fill-color:darkred">Онлайн: ${mainOnline + academyOnline}</span>`;
-      } else if (academyOnline + mainOnline < 5) {
-        online = `<span style="-webkit-text-fill-color:orange">Онлайн: ${mainOnline + academyOnline}</span>`;
-      } else if (academyOnline + mainOnline < 10) { 
-        online = `<span style="-webkit-text-fill-color:yellow">Онлайн: ${mainOnline + academyOnline}</span>`;
+  function setOnline(online) {
+    if (online) {
+      if (online < 1) {
+        onlineHTML = `<span style="-webkit-text-fill-color:orange">Онлайн: ${online}</span>`;
+      } else if (online < 5) {
+        onlineHTML = `<span style="-webkit-text-fill-color:yellow">Онлайн: ${online}</span>`;
       } else {
-        online = 'Онлайн: ' + (mainOnline + academyOnline);
+        onlineHTML = `<span style="-webkit-text-fill-color:lightgreen">Онлайн: ${online}</span>`;
       }
-      document.querySelector('.server-online').innerHTML = online;
+    } else {
+      onlineHTML = '<span style="-webkit-text-fill-color: darkred">Сервера оффлайн</span>';
+    }
+      document.querySelector('.server-online').innerHTML = onlineHTML;
   }
   
 function getDataFromServers() {
-    fetch('https://api.mcsrvstat.us/3/n1.minwix.net:25063')
+    fetch('https://api.mcsrvstat.us/3/starland.lol')
   .then(response => {
     if (!response.ok) {
       throw new Error('Не удалось взять информацию с сервера')
@@ -294,31 +262,7 @@ function getDataFromServers() {
     return response.json();
   })
   .then(data => {
-    if (data.online) {
-      mainOnline = data.players.online;
-    } else {
-      mainOnline = false;
-    }
-  })
-  .then(() => {
-    fetch('https://api.mcsrvstat.us/3/n1.minwix.net:25010')
-     .then(response => {
-      if (!response.ok) {
-        throw new Error('Не удалось взять информацию с сервера')
-      }
-      return response.json();
-    })
-    .then(data => {
-      if (data.online) {
-        academyOnline = data.players.online
-      } else {
-        academyOnline = false;
-      }
-    })
-    .then(() => {
-      setOnline(mainOnline, academyOnline);
-    })
-    .catch(error => {console.error(error); document.querySelector('.server-online').innerHTML = '<span style="-webkit-text-fill-color: darkred">У вас нет интернета!</span>';});
+    setOnline(data.players.online)
   })
   .catch(error => {console.error(error); document.querySelector('.server-online').innerHTML = '<span style="-webkit-text-fill-color: darkred">У вас нет интернета!</span>';});
 }
@@ -327,7 +271,7 @@ getDataFromDiscord();
 
 //взять участников дс с сервера и отправить на сайт
 function getDataFromDiscord() {
-  fetch('https://discord.com/api/v9/invites/puKqkSUb4k?with_counts=true')
+  fetch('https://discord.com/api/v9/invites/starland01?with_counts=true')
   .then(responce => responce.json())
   .then(data => {
     document.querySelector('.ds-stat-num').innerHTML = data.approximate_member_count;
